@@ -23,7 +23,7 @@ function Button({
       " text-white bg-blue-400 border-blue-400 hover:bg-blue-600 hover:border-blue-600"
   else if (type === "primary")
     finalClass +=
-      " text-white bg-green-400 border-green-400 hover:bg-green-600 hover:border-green-600"
+      " text-white bg-green-600 border-green-400 hover:bg-green-800 hover:border-green-800"
   else if (type === "secondary")
     finalClass +=
       " text-blue-400 bg-transparent border-blue-400 hover:bg-blue-400 hover:text-white"

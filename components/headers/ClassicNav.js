@@ -1,54 +1,64 @@
-import React, { useState } from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import React, { useState } from "react";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faQuestionCircle,
   faBell,
   faBars,
   faTimes,
-} from "@fortawesome/free-solid-svg-icons"
+} from "@fortawesome/free-solid-svg-icons";
 
-import Avatar from "../../components/Avatar"
-import Button from "../../components/Button"
+import Avatar from "../../components/Avatar";
+import Button from "../../components/Button";
 
 function ClassicNav() {
-  const [mobileOpen, setMobileOpen] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false);
   return (
     <div className="flex items-center h-20 px-6 justify-between border-b border-gray-300 bg-gray-800 text-white relative z-50">
       <div className="h-8">
-        <img
+        {/* <img
           src="https://gustui.s3.amazonaws.com/Gust+Logo+White.png"
           className="h-full"
-        />
+        /> */}
+        <Link href="/">
+          <button className="text-2xl">Yeah G</button>
+        </Link>
       </div>
       <div className="flex-1 ml-10 items-center hidden lg:flex">
-        <a
-          href="#"
-          className="no-underline px-2 mr-3 text-gray-200 font-medium hover:text-blue-400"
-        >
-          Home
-        </a>
-        <a
-          href="#"
-          className="no-underline px-2 mr-3 font-medium hover:text-blue-400"
-        >
-          Dogs
-        </a>
-        <a
-          href="#"
-          className="no-underline px-2 mr-3 text-gray-200 font-medium hover:text-blue-400"
-        >
-          Bones
-        </a>
-        <a
-          href="#"
-          className="no-underline px-2 mr-3 text-gray-200 font-medium hover:text-blue-400"
-        >
-          Settings
-        </a>
+        <Link href="/">
+          <a className="no-underline px-2 mr-3 text-gray-200 font-medium hover:text-blue-400">
+            Home
+          </a>
+        </Link>
+        <Link href="/about">
+          <a className="no-underline px-2 mr-3 font-medium hover:text-blue-400">
+            About
+          </a>
+        </Link>
+        <Link href="/services">
+          <a className="no-underline px-2 mr-3 text-gray-200 font-medium hover:text-blue-400">
+            Services
+          </a>
+        </Link>
+        <Link href="/testimonials">
+          <a className="no-underline px-2 mr-3 text-gray-200 font-medium hover:text-blue-400">
+            Testimonials
+          </a>
+        </Link>
+        <Link href="/photos">
+          <a className="no-underline px-2 mr-3 text-gray-200 font-medium hover:text-blue-400">
+            Photos
+          </a>
+        </Link>
       </div>
       <div className="items-center hidden lg:flex">
-        <Button text="Add Food" size="sm" />
-        <FontAwesomeIcon
+        <Link href="/events">
+            <Button text="Events" size="sm" type="secondary" className="mr-5" />
+        </Link>
+        <Link href="/contact">
+            <Button text="Contact" size="sm" type="primary"/>
+        </Link>
+        {/* <FontAwesomeIcon
           icon={faQuestionCircle}
           className="ml-6 text-2xl cursor-pointer"
         />
@@ -60,7 +70,7 @@ function ClassicNav() {
           image="https://picsum.photos/id/237/200/200.jpg"
           status="online"
           className="ml-6 cursor-pointer"
-        />
+        /> */}
       </div>
       <FontAwesomeIcon
         icon={mobileOpen ? faTimes : faBars}
@@ -94,8 +104,8 @@ function ClassicNav() {
             >
               Settings
             </a>
-            <Button text="Add Food" size="sm" className="my-2" />
-            <div className="my-2 flex justify-center">
+            <Button text="Events" size="sm" className="my-2" />
+            {/* <div className="my-2 flex justify-center">
               <FontAwesomeIcon
                 icon={faQuestionCircle}
                 className="text-2xl mx-2 cursor-pointer"
@@ -109,12 +119,12 @@ function ClassicNav() {
               image="https://picsum.photos/id/237/200/200.jpg"
               status="online"
               className="cursor-pointer my-2"
-            />
+            /> */}
           </div>
         </div>
       )}
     </div>
-  )
+  );
 }
 
 export default ClassicNav;
