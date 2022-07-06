@@ -8,7 +8,7 @@ export default function Header() {
 
   return (
     <header class="fixed top-0 w-full clearNav z-50">
-      <div class="max-w-5xl mx-auto flex flex-wrap p-5 flex-col md:flex-row">
+      <div class="max-w-screen-xl mx-auto flex flex-wrap p-5 flex-col md:flex-row">
         <div className="flex flex-row items-center justify-between p-3 md:p-1">
           <Link href="/">
             <a class="flex text-3xl text-white font-medium mb-4 md:mb-0">
