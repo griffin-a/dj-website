@@ -53,10 +53,10 @@ function ClassicNav() {
       </div>
       <div className="items-center hidden lg:flex">
         <Link href="/events">
-            <Button text="Events" size="sm" type="secondary" className="mr-5" />
+          <Button text="Events" size="sm" type="secondary" className="mr-5" />
         </Link>
         <Link href="/contact">
-            <Button text="Contact" size="sm" type="primary"/>
+          <Button text="Contact" size="sm" type="primary" />
         </Link>
         {/* <FontAwesomeIcon
           icon={faQuestionCircle}
@@ -80,46 +80,40 @@ function ClassicNav() {
       {mobileOpen && (
         <div className="bg-blue-800 absolute top-full left-0 flex flex-col w-full pb-8 lg:hidden">
           <div className="flex-1 flex flex-col items-center text-xl">
-            <a
-              href="#"
-              className="no-underline px-2 my-2 text-gray-200 font-medium hover:text-blue-400"
-            >
-              Home
-            </a>
-            <a
-              href="#"
-              className="no-underline px-2 my-2 font-medium hover:text-blue-400"
-            >
-              Dogs
-            </a>
-            <a
-              href="#"
-              className="no-underline px-2 my-2 text-gray-200 font-medium hover:text-blue-400"
-            >
-              Bones
-            </a>
-            <a
-              href="#"
-              className="no-underline px-2 my-2 text-gray-200 font-medium hover:text-blue-400"
-            >
-              Settings
-            </a>
-            <Button text="Events" size="sm" className="my-2" />
-            {/* <div className="my-2 flex justify-center">
-              <FontAwesomeIcon
-                icon={faQuestionCircle}
-                className="text-2xl mx-2 cursor-pointer"
-              />
-              <FontAwesomeIcon
-                icon={faBell}
-                className="text-2xl mx-2 cursor-pointer"
-              />
+            <Link href="/">
+              <a className="no-underline px-2 mr-3 text-gray-200 font-medium hover:text-blue-400">
+                Home
+              </a>
+            </Link>
+            <Link href="/about">
+              <a className="no-underline px-2 mr-3 font-medium hover:text-blue-400">
+                About
+              </a>
+            </Link>
+            <Link href="/services">
+              <a className="no-underline px-2 mr-3 text-gray-200 font-medium hover:text-blue-400">
+                Services
+              </a>
+            </Link>
+            <Link href="/testimonials">
+              <a className="no-underline px-2 mr-3 text-gray-200 font-medium hover:text-blue-400">
+                Testimonials
+              </a>
+            </Link>
+            <Link href="/photos">
+              <a className="no-underline px-2 mr-3 text-gray-200 font-medium hover:text-blue-400">
+                Photos
+              </a>
+            </Link>
+
+            <div className="my-2 flex justify-center">
+              <Link href="/events">
+                <Button text="Events" size="sm" type="secondary" />
+              </Link>
+              <Link href="/contact">
+                <Button text="Contact" size="sm" type="primary" />
+              </Link>
             </div>
-            <Avatar
-              image="https://picsum.photos/id/237/200/200.jpg"
-              status="online"
-              className="cursor-pointer my-2"
-            /> */}
           </div>
         </div>
       )}
