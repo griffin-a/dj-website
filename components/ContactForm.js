@@ -1,47 +1,47 @@
 export default function ContactForm() {
   return (
     <div>
-      <section class="bg-gray-100">
-        <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
-          <div class="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
-            <div class="lg:py-12 lg:col-span-2">
-              <p class="max-w-xl text-lg">
+      <section className="bg-gray-100">
+        <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
+            <div className="lg:py-12 lg:col-span-2">
+              <p className="max-w-xl text-lg">
                 Please don't hesitate to get in touch with us for any general inquiries or questions!
               </p>
 
-              <div class="mt-8">
-                <a href="" class="text-2xl font-bold text-pink-600">
+              <div className="mt-8">
+                <a href="" className="text-2xl font-bold text-pink-600">
                   {" "}
                   +64-27-557-8760{" "}
                 </a>
 
-                <address class="mt-2 not-italic">
+                <address className="mt-2 not-italic">
                   Auckland CBD, Auckland, New Zealand
                 </address>
               </div>
             </div>
 
-            <div class="p-8 bg-white rounded-lg shadow-lg lg:p-12 lg:col-span-3">
-              <form action="" class="space-y-4">
+            <div className="p-8 bg-white rounded-lg shadow-lg lg:p-12 lg:col-span-3">
+              <form action="" className="space-y-4">
                 <div>
-                  <label class="sr-only" for="name">
+                  <label className="sr-only" for="name">
                     Name
                   </label>
                   <input
-                    class="w-full p-3 text-sm border-gray-200 rounded-lg"
+                    className="w-full p-3 text-sm border-gray-200 rounded-lg"
                     placeholder="Name"
                     type="text"
                     id="name"
                   />
                 </div>
 
-                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div>
-                    <label class="sr-only" for="email">
+                    <label className="sr-only" for="email">
                       Email
                     </label>
                     <input
-                      class="w-full p-3 text-sm border-gray-200 rounded-lg"
+                      className="w-full p-3 text-sm border-gray-200 rounded-lg"
                       placeholder="Email address"
                       type="email"
                       id="email"
@@ -49,11 +49,11 @@ export default function ContactForm() {
                   </div>
 
                   <div>
-                    <label class="sr-only" for="phone">
+                    <label className="sr-only" for="phone">
                       Phone
                     </label>
                     <input
-                      class="w-full p-3 text-sm border-gray-200 rounded-lg"
+                      className="w-full p-3 text-sm border-gray-200 rounded-lg"
                       placeholder="Phone Number"
                       type="tel"
                       id="phone"
@@ -61,78 +61,78 @@ export default function ContactForm() {
                   </div>
                 </div>
 
-                <div class="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
+                <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
                   <div>
                     <input
-                      class="sr-only"
+                      className="sr-only"
                       id="option1"
                       type="radio"
                       tabindex="-1"
                     />
                     <label
                       for="option1"
-                      class="block w-full p-3 border border-gray-200 rounded-lg"
+                      className="block w-full p-3 border border-gray-200 rounded-lg"
                       tabindex="0"
                     >
-                      <span class="text-sm font-medium"> Booking </span>
+                      <span className="text-sm font-medium"> Booking </span>
                     </label>
                   </div>
 
                   <div>
                     <input
-                      class="sr-only"
+                      className="sr-only"
                       id="option2"
                       type="radio"
                       tabindex="-1"
                     />
                     <label
                       for="option2"
-                      class="block w-full p-3 border border-gray-200 rounded-lg"
+                      className="block w-full p-3 border border-gray-200 rounded-lg"
                       tabindex="0"
                     >
-                      <span class="text-sm font-medium"> Quote </span>
+                      <span className="text-sm font-medium"> Quote </span>
                     </label>
                   </div>
 
                   <div>
                     <input
-                      class="sr-only"
+                      className="sr-only"
                       id="option3"
                       type="radio"
                       tabindex="-1"
                     />
                     <label
                       for="option3"
-                      class="block w-full p-3 border border-gray-200 rounded-lg"
+                      className="block w-full p-3 border border-gray-200 rounded-lg"
                       tabindex="0"
                     >
-                      <span class="text-sm font-medium"> Other </span>
+                      <span className="text-sm font-medium"> Other </span>
                     </label>
                   </div>
                 </div>
 
                 <div>
-                  <label class="sr-only" for="message">
+                  <label className="sr-only" for="message">
                     Message
                   </label>
                   <textarea
-                    class="w-full p-3 text-sm border-gray-200 rounded-lg"
+                    className="w-full p-3 text-sm border-gray-200 rounded-lg"
                     placeholder="Message"
                     rows="8"
                     id="message"
                   ></textarea>
                 </div>
 
-                <div class="mt-4">
+                <div className="mt-4">
                   <button
                     type="submit"
-                    class="inline-flex items-center justify-center w-full px-5 py-3 text-white bg-black rounded-lg sm:w-auto"
+                    className="inline-flex items-center justify-center w-full px-5 py-3 text-white bg-black rounded-lg sm:w-auto"
                   >
-                    <span class="font-medium"> Send Inquiry </span>
+                    <span className="font-medium"> Send Inquiry </span>
 
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      class="w-5 h-5 ml-3"
+                      className="w-5 h-5 ml-3"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"

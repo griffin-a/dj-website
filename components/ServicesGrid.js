@@ -1,15 +1,15 @@
 export default function ServicesGrid() {
   return (
-    <section class="pb-12 lg:pb-[90px]">
-      <div class="container">
-        <div class="flex flex-wrap -mx-4">
-          <div class="w-full px-4">
-            <div class="text-center mx-auto mb-12 lg:mb-20 max-w-[510px]">
-              <span class="text-black font-semibold text-lg text-primary mb-2 block">
+    <section className="pb-12 lg:pb-[90px]">
+      <div className="container">
+        <div className="flex flex-wrap -mx-4">
+          <div className="w-full px-4">
+            <div className="text-center mx-auto mb-12 lg:mb-20 max-w-[510px]">
+              <span className="text-black font-semibold text-lg text-primary mb-2 block">
                 Our Services
               </span>
               <h2
-                class="
+                className="
                 text-black
                   font-bold
                   text-3xl
@@ -21,17 +21,17 @@ export default function ServicesGrid() {
               >
                 What We Offer
               </h2>
-              <p class="text-base text-body-color">
+              <p className="text-base text-body-color">
                 There are many variations of passages of Lorem Ipsum available
                 but the majority have suffered alteration in some form.
               </p>
             </div>
           </div>
         </div>
-        <div class="flex flex-wrap -mx-4">
-          <div class="w-full md:w-1/2 lg:w-1/3 px-4">
+        <div className="flex flex-wrap -mx-4">
+          <div className="w-full md:w-1/2 lg:w-1/3 px-4">
             <div
-              class="
+              className="
                p-10
                md:px-7
                xl:px-10
@@ -43,7 +43,7 @@ export default function ServicesGrid() {
                "
             >
               <div
-                class="
+                className="
                   w-[70px]
                   h-[70px]
                   flex
@@ -67,18 +67,18 @@ export default function ServicesGrid() {
                   />
                 </svg>
               </div>
-              <h4 class="font-semibold text-xl text-dark mb-3">
+              <h4 className="font-semibold text-xl text-dark mb-3">
                 Refreshing Design
               </h4>
-              <p class="text-body-color">
+              <p className="text-body-color">
                 We dejoy working with discerning clients, people for whom
                 qualuty, service, integrity & aesthetics.
               </p>
             </div>
           </div>
-          <div class="w-full md:w-1/2 lg:w-1/3 px-4">
+          <div className="w-full md:w-1/2 lg:w-1/3 px-4">
             <div
-              class="
+              className="
                p-10
                md:px-7
                xl:px-10
@@ -90,7 +90,7 @@ export default function ServicesGrid() {
                "
             >
               <div
-                class="
+                className="
                   w-[70px]
                   h-[70px]
                   flex
@@ -120,18 +120,18 @@ export default function ServicesGrid() {
                   />
                 </svg>
               </div>
-              <h4 class="font-semibold text-xl text-dark mb-3">
+              <h4 className="font-semibold text-xl text-dark mb-3">
                 Based on Tailwind CSS
               </h4>
-              <p class="text-body-color">
+              <p className="text-body-color">
                 We dejoy working with discerning clients, people for whom
                 qualuty, service, integrity & aesthetics.
               </p>
             </div>
           </div>
-          <div class="w-full md:w-1/2 lg:w-1/3 px-4">
+          <div className="w-full md:w-1/2 lg:w-1/3 px-4">
             <div
-              class="
+              className="
                p-10
                md:px-7
                xl:px-10
@@ -143,7 +143,7 @@ export default function ServicesGrid() {
                "
             >
               <div
-                class="
+                className="
                   w-[70px]
                   h-[70px]
                   flex
@@ -179,18 +179,18 @@ export default function ServicesGrid() {
                   />
                 </svg>
               </div>
-              <h4 class="font-semibold text-xl text-dark mb-3">
+              <h4 className="font-semibold text-xl text-dark mb-3">
                 100+ Components
               </h4>
-              <p class="text-body-color">
+              <p className="text-body-color">
                 We dejoy working with discerning clients, people for whom
                 qualuty, service, integrity & aesthetics.
               </p>
             </div>
           </div>
-          <div class="w-full md:w-1/2 lg:w-1/3 px-4">
+          <div className="w-full md:w-1/2 lg:w-1/3 px-4">
             <div
-              class="
+              className="
                p-10
                md:px-7
                xl:px-10
@@ -202,7 +202,7 @@ export default function ServicesGrid() {
                "
             >
               <div
-                class="
+                className="
                   w-[70px]
                   h-[70px]
                   flex
@@ -238,18 +238,18 @@ export default function ServicesGrid() {
                   />
                 </svg>
               </div>
-              <h4 class="font-semibold text-xl text-dark mb-3">
+              <h4 className="font-semibold text-xl text-dark mb-3">
                 Speed Optimized
               </h4>
-              <p class="text-body-color">
+              <p className="text-body-color">
                 We dejoy working with discerning clients, people for whom
                 qualuty, service, integrity & aesthetics.
               </p>
             </div>
           </div>
-          <div class="w-full md:w-1/2 lg:w-1/3 px-4">
+          <div className="w-full md:w-1/2 lg:w-1/3 px-4">
             <div
-              class="
+              className="
                p-10
                md:px-7
                xl:px-10
@@ -261,7 +261,7 @@ export default function ServicesGrid() {
                "
             >
               <div
-                class="
+                className="
                   w-[70px]
                   h-[70px]
                   flex
@@ -285,18 +285,18 @@ export default function ServicesGrid() {
                   />
                 </svg>
               </div>
-              <h4 class="font-semibold text-xl text-dark mb-3">
+              <h4 className="font-semibold text-xl text-dark mb-3">
                 Fully Customizable
               </h4>
-              <p class="text-body-color">
+              <p className="text-body-color">
                 We dejoy working with discerning clients, people for whom
                 qualuty, service, integrity & aesthetics.
               </p>
             </div>
           </div>
-          <div class="w-full md:w-1/2 lg:w-1/3 px-4">
+          <div className="w-full md:w-1/2 lg:w-1/3 px-4">
             <div
-              class="
+              className="
                p-10
                md:px-7
                xl:px-10
@@ -308,7 +308,7 @@ export default function ServicesGrid() {
                "
             >
               <div
-                class="
+                className="
                   w-[70px]
                   h-[70px]
                   flex
@@ -336,10 +336,10 @@ export default function ServicesGrid() {
                   />
                 </svg>
               </div>
-              <h4 class="font-semibold text-xl text-dark mb-3">
+              <h4 className="font-semibold text-xl text-dark mb-3">
                 Regular Updates
               </h4>
-              <p class="text-body-color">
+              <p className="text-body-color">
                 We dejoy working with discerning clients, people for whom
                 qualuty, service, integrity & aesthetics.
               </p>

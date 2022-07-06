@@ -1,22 +1,22 @@
 export default function DropdownSection() {
   return (
     <div>
-      <div class="inline-flex items-stretch bg-white border rounded-md">
+      <div className="inline-flex items-stretch bg-white border rounded-md">
         <a
           href="/edit"
-          class="px-4 py-2 text-sm text-gray-600 hover:text-gray-700 hover:bg-gray-50 rounded-l-md"
+          className="px-4 py-2 text-sm text-gray-600 hover:text-gray-700 hover:bg-gray-50 rounded-l-md"
         >
           Edit
         </a>
 
-        <div class="relative">
+        <div className="relative">
           <button
             type="button"
-            class="inline-flex items-center justify-center h-full px-2 text-gray-600 border-l border-gray-100 hover:text-gray-700 rounded-r-md hover:bg-gray-50"
+            className="inline-flex items-center justify-center h-full px-2 text-gray-600 border-l border-gray-100 hover:text-gray-700 rounded-r-md hover:bg-gray-50"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="w-4 h-4"
+              className="w-4 h-4"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -29,19 +29,19 @@ export default function DropdownSection() {
           </button>
 
           <div
-            class="absolute right-0 z-10 w-56 mt-4 origin-top-right bg-white border border-gray-100 rounded-md shadow-lg"
+            className="absolute right-0 z-10 w-56 mt-4 origin-top-right bg-white border border-gray-100 rounded-md shadow-lg"
             role="menu"
           >
-            <div class="flow-root py-2">
-              <div class="-my-2 divide-y divide-gray-100">
-                <div class="p-2">
-                  <strong class="block p-2 text-xs font-medium text-gray-400 uppercase">
+            <div className="flow-root py-2">
+              <div className="-my-2 divide-y divide-gray-100">
+                <div className="p-2">
+                  <strong className="block p-2 text-xs font-medium text-gray-400 uppercase">
                     General
                   </strong>
 
                   <a
                     href="#"
-                    class="block px-4 py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700"
+                    className="block px-4 py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700"
                     role="menuitem"
                   >
                     View on Storefront
@@ -49,7 +49,7 @@ export default function DropdownSection() {
 
                   <a
                     href="#"
-                    class="block px-4 py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700"
+                    className="block px-4 py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700"
                     role="menuitem"
                   >
                     View Warehouse Info
@@ -57,7 +57,7 @@ export default function DropdownSection() {
 
                   <a
                     href="#"
-                    class="block px-4 py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700"
+                    className="block px-4 py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700"
                     role="menuitem"
                   >
                     Duplicate Product
@@ -65,27 +65,27 @@ export default function DropdownSection() {
 
                   <a
                     href="#"
-                    class="block px-4 py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700"
+                    className="block px-4 py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700"
                     role="menuitem"
                   >
                     Unpublish Product
                   </a>
                 </div>
 
-                <div class="p-2">
-                  <strong class="block p-2 text-xs font-medium text-gray-400 uppercase">
+                <div className="p-2">
+                  <strong className="block p-2 text-xs font-medium text-gray-400 uppercase">
                     Danger Zone
                   </strong>
 
                   <form method="POST" action="#">
                     <button
                       type="submit"
-                      class="flex items-center w-full gap-2 px-4 py-2 text-sm text-red-700 rounded-lg hover:bg-red-50"
+                      className="flex items-center w-full gap-2 px-4 py-2 text-sm text-red-700 rounded-lg hover:bg-red-50"
                       role="menuitem"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="w-4 h-4"
+                        className="w-4 h-4"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"

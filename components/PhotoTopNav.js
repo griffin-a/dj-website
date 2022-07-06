@@ -2,15 +2,15 @@ import DropdownSectioned from "./DropdownSectioned";
 
 export default function PhotoTopNav() {
   return (
-    <header class="shadow-sm">
-      <div class="flex items-center justify-between h-16 max-w-screen-xl px-4 mx-auto">
-        <div class="flex flex-1 w-0 lg:hidden">
+    <header className="shadow-sm">
+      <div className="flex items-center justify-between h-16 max-w-screen-xl px-4 mx-auto">
+        <div className="flex flex-1 w-0 lg:hidden">
           <button
-            class="p-2 text-gray-600 bg-gray-100 rounded-full"
+            className="p-2 text-gray-600 bg-gray-100 rounded-full"
             type="button"
           >
             <svg
-              class="w-5 h-5"
+              className="w-5 h-5"
               fill="none"
               stroke="currentColor"
               viewbox="0 0 24 24"
@@ -26,23 +26,23 @@ export default function PhotoTopNav() {
           </button>
         </div>
 
-        <div class="flex items-center space-x-4">
-          <span class="w-20 h-10 bg-gray-200 rounded-lg"></span>
+        <div className="flex items-center space-x-4">
+          <span className="w-20 h-10 bg-gray-200 rounded-lg"></span>
 
-          <form class="hidden mb-0 lg:flex">
-            <div class="relative">
+          <form className="hidden mb-0 lg:flex">
+            <div className="relative">
               <input
-                class="h-10 pr-10 text-sm placeholder-gray-300 border-gray-200 rounded-lg focus:z-10"
+                className="h-10 pr-10 text-sm placeholder-gray-300 border-gray-200 rounded-lg focus:z-10"
                 placeholder="Search..."
                 type="text"
               />
 
               <button
-                class="absolute inset-y-0 right-0 p-2 mr-px text-gray-600 rounded-r-lg"
+                className="absolute inset-y-0 right-0 p-2 mr-px text-gray-600 rounded-r-lg"
                 type="submit"
               >
                 <svg
-                  class="w-5 h-5"
+                  className="w-5 h-5"
                   fill="currentColor"
                   viewbox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -58,13 +58,13 @@ export default function PhotoTopNav() {
           </form>
         </div>
 
-        <div class="flex justify-end flex-1 w-0 lg:hidden">
+        <div className="flex justify-end flex-1 w-0 lg:hidden">
           <button
-            class="p-2 text-gray-500 bg-gray-100 rounded-full"
+            className="p-2 text-gray-500 bg-gray-100 rounded-full"
             type="button"
           >
             <svg
-              class="w-5 h-5"
+              className="w-5 h-5"
               fill="currentColor"
               viewbox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -78,31 +78,31 @@ export default function PhotoTopNav() {
           </button>
         </div>
 
-        <nav class="items-center justify-center hidden space-x-8 text-sm font-medium lg:flex lg:flex-1 lg:w-0">
-          <a class="text-gray-900" href="">
+        <nav className="items-center justify-center hidden space-x-8 text-sm font-medium lg:flex lg:flex-1 lg:w-0">
+          <a className="text-gray-900" href="">
             About
           </a>
-          <a class="text-gray-900" href="">
+          <a className="text-gray-900" href="">
             Blog
           </a>
-          <a class="text-gray-900" href="">
+          <a className="text-gray-900" href="">
             Projects
           </a>
-          <a class="text-gray-900" href="">
+          <a className="text-gray-900" href="">
             Contact
           </a>
           <DropdownSectioned />
         </nav>
 
-        <div class="items-center hidden space-x-4 lg:flex">
+        <div className="items-center hidden space-x-4 lg:flex">
           <a
-            class="px-5 py-2 text-sm font-medium text-gray-600 bg-gray-100 rounded-lg"
+            className="px-5 py-2 text-sm font-medium text-gray-600 bg-gray-100 rounded-lg"
             href=""
           >
             Log in
           </a>
           <a
-            class="px-5 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg"
+            className="px-5 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg"
             href=""
           >
             Sign up
@@ -110,18 +110,18 @@ export default function PhotoTopNav() {
         </div>
       </div>
 
-      <div class="border-t border-gray-100 lg:hidden">
-        <nav class="flex items-center justify-center p-4 overflow-x-auto text-sm font-medium">
-          <a class="flex-shrink-0 pl-4 text-gray-900" href="">
+      <div className="border-t border-gray-100 lg:hidden">
+        <nav className="flex items-center justify-center p-4 overflow-x-auto text-sm font-medium">
+          <a className="flex-shrink-0 pl-4 text-gray-900" href="">
             About
           </a>
-          <a class="flex-shrink-0 pl-4 text-gray-900" href="">
+          <a className="flex-shrink-0 pl-4 text-gray-900" href="">
             Blog
           </a>
-          <a class="flex-shrink-0 pl-4 text-gray-900" href="">
+          <a className="flex-shrink-0 pl-4 text-gray-900" href="">
             Projects
           </a>
-          <a class="flex-shrink-0 pl-4 text-gray-900" href="">
+          <a className="flex-shrink-0 pl-4 text-gray-900" href="">
             Contact
           </a>
         </nav>

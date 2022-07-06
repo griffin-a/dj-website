@@ -2,11 +2,12 @@ import "../styles/globals.css";
 import Header from "../components/headers/Header";
 import AltHeader2 from "../components/headers/AltHeader2";
 import Footer from "../components/Footer";
+import ClassicNav from "../components/headers/ClassicNav";
 
 function MyApp({ Component, pageProps }) {
   return (
     <div>
-      <AltHeader2 />
+      <ClassicNav />
       <Component {...pageProps} />;
       <Footer />
     </div>
