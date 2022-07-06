@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function Header() {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -9,11 +10,11 @@ export default function Header() {
     <header class="fixed top-0 w-full clearNav z-50">
       <div class="max-w-5xl mx-auto flex flex-wrap p-5 flex-col md:flex-row">
         <div className="flex flex-row items-center justify-between p-3 md:p-1">
-          <a
-            href="/"
-            class="flex text-3xl text-white font-medium mb-4 md:mb-0"
-          >YEAH G
-          </a>
+          <Link href="/">
+            <a class="flex text-3xl text-white font-medium mb-4 md:mb-0">
+              YEAH G
+            </a>
+          </Link>
           <button
             className="text-white pb-4 cursor-pointer leading-none px-3 py-1 md:hidden outline-none focus:outline-none content-end ml-auto"
             type="button"
@@ -45,9 +46,11 @@ export default function Header() {
           }
         >
           <div class="md:ml-auto md:mr-auto font-4 pt-1 md:pl-14 pl-1 flex flex-wrap items-center md:text-base text-1xl md:justify-center justify-items-start">
-            <a class="mr-11 pr-2 cursor-pointer text-gray-300 hover:text-white font-semibold tr04">
-              About
-            </a>
+            <Link href="/about">
+              <a class="mr-11 pr-2 cursor-pointer text-gray-300 hover:text-white font-semibold tr04">
+                About
+              </a>
+            </Link>
             <div className="relative">
               <button
                 type="button"
@@ -56,7 +59,11 @@ export default function Header() {
                   "
                 onMouseEnter={() => (setFlyer(!flyer), setFlyerTwo(false))}
               >
-                <span className="tr04">Events</span>
+                <Link href="/events">
+                  <span className="tr04" onClick={() => setFlyer(false)}>
+                    Events
+                  </span>
+                </Link>
                 <svg
                   className={
                     flyer === true
@@ -128,15 +135,21 @@ export default function Header() {
                 </div>
               </div>
             </div>
-            <a class="mr-12 md:ml-11 ml-0 cursor-pointer text-gray-300 hover:text-white font-semibold tr04">
-              Photos
-            </a>
-            <a class="mr-12 cursor-pointer text-gray-300 hover:text-white font-semibold tr04">
-              Testimonials
-            </a>
-            <a class="mr-5 cursor-pointer text-gray-300 hover:text-white font-semibold tr04">
-              Contact
-            </a>
+            <Link href="/photos">
+              <a class="mr-12 md:ml-11 ml-0 cursor-pointer text-gray-300 hover:text-white font-semibold tr04">
+                Photos
+              </a>
+            </Link>
+            <Link href="/testimonials">
+              <a class="mr-12 cursor-pointer text-gray-300 hover:text-white font-semibold tr04">
+                Testimonials
+              </a>
+            </Link>
+            <Link href="/contact">
+              <a class="mr-5 cursor-pointer text-gray-300 hover:text-white font-semibold tr04">
+                Contact
+              </a>
+            </Link>
           </div>
           <a
             href="https://twitter.com/"

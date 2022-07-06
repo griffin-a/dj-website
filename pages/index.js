@@ -19,9 +19,9 @@ export default function Home() {
         <title>Yeah g</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <Header />
+      {/* <Header /> */}
       <Main />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
