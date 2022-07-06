@@ -12,7 +12,7 @@ export default function Header() {
           <a
             href="/"
             class="flex text-3xl text-white font-medium mb-4 md:mb-0"
-          >NINE4
+          >YEAH G
           </a>
           <button
             className="text-white pb-4 cursor-pointer leading-none px-3 py-1 md:hidden outline-none focus:outline-none content-end ml-auto"
@@ -46,7 +46,7 @@ export default function Header() {
         >
           <div class="md:ml-auto md:mr-auto font-4 pt-1 md:pl-14 pl-1 flex flex-wrap items-center md:text-base text-1xl md:justify-center justify-items-start">
             <a class="mr-11 pr-2 cursor-pointer text-gray-300 hover:text-white font-semibold tr04">
-              Features
+              About
             </a>
             <div className="relative">
               <button
@@ -56,7 +56,7 @@ export default function Header() {
                   "
                 onMouseEnter={() => (setFlyer(!flyer), setFlyerTwo(false))}
               >
-                <span className="tr04">Templates</span>
+                <span className="tr04">Events</span>
                 <svg
                   className={
                     flyer === true
@@ -129,10 +129,13 @@ export default function Header() {
               </div>
             </div>
             <a class="mr-12 md:ml-11 ml-0 cursor-pointer text-gray-300 hover:text-white font-semibold tr04">
-              Pricing
+              Photos
+            </a>
+            <a class="mr-12 cursor-pointer text-gray-300 hover:text-white font-semibold tr04">
+              Testimonials
             </a>
             <a class="mr-5 cursor-pointer text-gray-300 hover:text-white font-semibold tr04">
-              Careers
+              Contact
             </a>
           </div>
           <a

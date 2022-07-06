@@ -16,7 +16,7 @@ export default function Home() {
         }}
       />
       <Head>
-        <title>nine4</title>
+        <title>Yeah g</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
       <Header />

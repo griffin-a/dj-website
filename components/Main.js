@@ -3,12 +3,12 @@ export default function Main() {
     <section class="text-gray-600 body-font">
       <div class="max-w-5xl pt-52 pb-24 mx-auto">
         <h1 class="text-80 text-center font-4 lh-6 ld-04 font-bold text-white mb-6">
-          Create your next website fast and easy
+          Yeah g. Your one-stop-shop to musical versatility.
         </h1>
         <h2 class="text-2xl font-4 font-semibold lh-6 ld-04 pb-11 text-gray-700 text-center">
-          nine4 is a free to use template website for websites made
+          Griffin Almquist is Yeah g, a DJ who isn't afraid to work with any and every genre of music.
           <br />
-          with Next.js and styled with Tailwind CSS
+          Open to DJing events of all kinds.
         </h2>
         <div className="ml-6 text-center">
           <a
@@ -32,17 +32,16 @@ export default function Main() {
       <div className="container flex flex-col items-center justify-center mx-auto">
         <img
           className="object-cover object-center w-3/4 mb-10 border shadow-md g327"
-          alt="Placeholder Image"
-          src="./images/placeholder.png"
+          alt="DJ stock image"
+          src="./images/dj-1.jpg"
         ></img>
       </div>
       <h2 className="pt-40 mb-1 text-2xl font-semibold tracking-tighter text-center text-gray-200 lg:text-7xl md:text-6xl">
-        Clean and tidy code.
+        Testimonials
       </h2>
       <br></br>
       <p className="mx-auto text-xl text-center text-gray-300 font-normal leading-relaxed fs521 lg:w-2/3">
-        Here is our collection of free to use templates made with Next.js &
-        styled with Tailwind CSS.
+        See what our clients have had to say about Yeah g!
       </p>
       <div className="pt-12 pb-24 max-w-4xl mx-auto fsac4 md:px-1 px-3">
         <div class="ktq4">
@@ -56,6 +55,7 @@ export default function Main() {
             porttitor.
           </p>
         </div>
+        
         <div class="ktq4">
           <img className="w-10" src="https://nine4.app/favicon.png"></img>
           <h3 class="pt-3 font-semibold text-lg text-white">
@@ -125,7 +125,7 @@ export default function Main() {
               Subscribe to our newsletter
             </h1>
             <h1 class="mb-9 text-2xl font-semibold text-gray-200">
-              Enter your email address and get our newsletters straight away.
+              Enter your email address to get notified about any upcoming events and updates!
             </h1>
             <input
               type="email"
