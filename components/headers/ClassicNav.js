@@ -13,7 +13,7 @@ import Button from "../../components/Button"
 function ClassicNav() {
   const [mobileOpen, setMobileOpen] = useState(false)
   return (
-    <div className="flex items-center h-20 px-6 justify-between border-b border-gray-300 bg-blue-800 text-white relative z-50">
+    <div className="flex items-center h-20 px-6 justify-between border-b border-gray-300 bg-gray-800 text-white relative z-50">
       <div className="h-8">
         <img
           src="https://gustui.s3.amazonaws.com/Gust+Logo+White.png"

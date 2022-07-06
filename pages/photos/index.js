@@ -1,3 +1,4 @@
+import PaginationBoxes from "../../components/PaginationBoxes";
 import PaginationTab from "../../components/PaginationTab";
 import PhotoPage from "../../components/PhotoPage";
 import PhotoTopNav from "../../components/PhotoTopNav";
@@ -20,7 +21,7 @@ export default function Photos() {
               <PhotoPage />
             </div>
             <footer class="text-right">
-              <PaginationTab />
+              <PaginationBoxes />
             </footer>
           </div>
         </section>
