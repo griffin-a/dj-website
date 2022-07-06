@@ -1,3 +1,5 @@
+import ServicesGrid from "../../components/ServicesGrid";
+
 export default function Services() {
   return (
     <div>
@@ -9,6 +11,7 @@ export default function Services() {
         </div>
         <section class="bg-gray-100">
           <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
+            <ServicesGrid />
           </div>
         </section>
       </section>
