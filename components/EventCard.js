@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function EventCard({ eventType, title, description, imageUri }) {
   return (
     <div class="pb-5">
@@ -7,7 +5,7 @@ export default function EventCard({ eventType, title, description, imageUri }) {
         <img
           class="absolute inset-0 object-cover w-full h-full transition-opacity opacity-75  group-hover:opacity-50"
           // src={`/../public/images/${imageUri}`}
-          src="../public/images/party-1.jpg"
+          src={imageUri}
           alt=""
         />
         <div class="relative p-8">

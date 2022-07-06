@@ -1,4 +1,6 @@
 import EventCard from "../../components/EventCard";
+import Party1 from "../../public/images/party-1.jpg";
+import Party2 from "../../public/images/party-2.jpg";
 
 export default function Events() {
   return (
@@ -14,14 +16,18 @@ export default function Events() {
             <EventCard
               eventType="party"
               title="First party"
-              description="Description"
-              imageUri="party-1.jpg"
+              description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+              Aut qui hic atque tenetur quis eius quos ea neque sunt, accusantium soluta 
+              minus veniam tempora deserunt? Molestiae eius quidem quam repellat."
+              imageUri="/images/party-1.jpg"
             />
             <EventCard
               eventType="party"
               title="Second party"
-              description="Description"
-              imageUri="party-2.jpg"
+              description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+              Aut qui hic atque tenetur quis eius quos ea neque sunt, accusantium soluta 
+              minus veniam tempora deserunt? Molestiae eius quidem quam repellat."
+              imageUri="/images/party-2.jpg"
             />
           </div>
         </section>
