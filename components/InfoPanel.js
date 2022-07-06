@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function InfoPanel({ title, imageUri, description }) {
+export default function InfoPanel({ title, imageUri, descriptions=[] }) {
   return (
     <section>
       <div className="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
@@ -13,7 +13,7 @@ export default function InfoPanel({ title, imageUri, description }) {
             <Image
               className="absolute inset-0 object-cover w-full h-full"
               src="/images/profile.jpg"
-              alt="Man using a computer"
+              alt="Profile picture of the DJ"
               layout="fill" // required
               objectFit="cover" // change to suit your needs
             />
@@ -21,9 +21,9 @@ export default function InfoPanel({ title, imageUri, description }) {
 
           <div className="lg:py-16">
             <article className="space-y-4 text-gray-600">
-              <p>{description}</p>
-
-              <p>{description}</p>
+              {descriptions.map(desc => {
+                return <p>{desc}</p>
+              })}
             </article>
           </div>
         </div>

@@ -1,4 +1,4 @@
-export default function SidebarFilter() {
+export default function SidebarNav() {
   return (
     <aside className="w-64" aria-label="Sidebar">
       <div className="overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800">

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function SkillsPanel({title, description, boxContent }) {
   return (
     <section>
@@ -5,37 +7,20 @@ export default function SkillsPanel({title, description, boxContent }) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 lg:gap-x-16 lg:items-center">
           <div className="max-w-lg mx-auto text-center lg:text-left lg:mx-0">
             <h2 className="text-black text-3xl font-bold sm:text-4xl">
-              Find your career path
+              {title}
             </h2>
 
             <p className="mt-4 text-gray-600">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut vero
-              aliquid sint distinctio iure ipsum cupiditate? Quis, odit
-              assumenda? Deleniti quasi inventore, libero reiciendis minima
-              aliquid tempora. Obcaecati, autem.
+              {description}
             </p>
 
-            <a
-              className="inline-flex items-center px-8 py-3 mt-8 text-white bg-indigo-600 border border-indigo-600 rounded hover:bg-transparent hover:text-indigo-600 active:text-indigo-500 focus:outline-none focus:ring"
-              href="/get-started"
-            >
-              <span className="text-sm font-medium"> Get Started </span>
-
-              <svg
-                className="w-5 h-5 ml-3"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
+            <Link href="/contact">
+            <a className="px-4 my-5 inline-flex items-center py-3 font-semibold inline-block rounded-sm font-medium border border-solid cursor-pointer text-center transition-colors duration-200 text-white bg-green-600 border-green-400 hover:bg-green-800 hover:border-green-800">
+              <div className="flex text-lg">
+                <span className="justify-center">Contact Me</span>
+              </div>
             </a>
+          </Link>
           </div>
 
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
@@ -62,10 +47,10 @@ export default function SkillsPanel({title, description, boxContent }) {
                 </svg>
               </span>
 
-              <h6 className="text-black mt-2 font-bold">Accountant</h6>
+              <h6 className="text-black mt-2 font-bold">House/EDM</h6>
 
               <p className="hidden sm:mt-1 sm:text-sm sm:text-gray-600 sm:block">
-                Lorem ipsum dolor sit amet consectetur.
+                Very comfortable with house music of all types, especially tech house. Generally pretty confident in EDM genres.
               </p>
             </a>
 
@@ -92,10 +77,10 @@ export default function SkillsPanel({title, description, boxContent }) {
                 </svg>
               </span>
 
-              <h6 className="text-black mt-2 font-bold">Accountant</h6>
+              <h6 className="text-black mt-2 font-bold">Pop/Top 40</h6>
 
               <p className="hidden sm:mt-1 sm:text-sm sm:text-gray-600 sm:block">
-                Lorem ipsum dolor sit amet consectetur.
+                Well versed in the classic pop hits that everyone knows of. This generally consists of songs that have been or are currently in the top 40 on the charts.
               </p>
             </a>
 
@@ -122,10 +107,10 @@ export default function SkillsPanel({title, description, boxContent }) {
                 </svg>
               </span>
 
-              <h6 className="text-black mt-2 font-bold">Accountant</h6>
+              <h6 className="text-black mt-2 font-bold">DnB</h6>
 
               <p className="hidden sm:mt-1 sm:text-sm sm:text-gray-600 sm:block">
-                Lorem ipsum dolor sit amet consectetur.
+                I am well versed in mixing DnB. I am a fan of the DnB culture here in NZ.
               </p>
             </a>
 
@@ -152,10 +137,10 @@ export default function SkillsPanel({title, description, boxContent }) {
                 </svg>
               </span>
 
-              <h6 className="text-black mt-2 font-bold">Accountant</h6>
+              <h6 className="text-black mt-2 font-bold">Hip Hop/RnB</h6>
 
               <p className="hidden sm:mt-1 sm:text-sm sm:text-gray-600 sm:block">
-                Lorem ipsum dolor sit amet consectetur.
+                I am a big fan of Hip Hop and RnB. I like hip hop and RnB and songs from throughout the ages. I have some experience in scratching.
               </p>
             </a>
 
@@ -182,10 +167,10 @@ export default function SkillsPanel({title, description, boxContent }) {
                 </svg>
               </span>
 
-              <h6 className="text-black mt-2 font-bold">Accountant</h6>
+              <h6 className="text-black mt-2 font-bold">Latin Music/Brazilian Music</h6>
 
               <p className="hidden sm:mt-1 sm:text-sm sm:text-gray-600 sm:block">
-                Lorem ipsum dolor sit amet consectetur.
+                I am a huge fan of Latin American music of all types. This includes genres such as Reggaeton, Latin Trap, Salsa, Merengue, Bachata, Moombahton, Baile Funk, Samba, etc. 
               </p>
             </a>
 
@@ -212,10 +197,10 @@ export default function SkillsPanel({title, description, boxContent }) {
                 </svg>
               </span>
 
-              <h6 className="text-black mt-2 font-bold">Accountant</h6>
+              <h6 className="text-black mt-2 font-bold">Disco/Nu Disco</h6>
 
               <p className="hidden sm:mt-1 sm:text-sm sm:text-gray-600 sm:block">
-                Lorem ipsum dolor sit amet consectetur.
+                I am experienced in mixing non-quantized music, such as disco. I love disco music and other music from the past. 
               </p>
             </a>
           </div>

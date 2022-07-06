@@ -5,9 +5,9 @@ export default function ServicesGrid() {
         <div className="flex flex-wrap -mx-4">
           <div className="w-full px-4">
             <div className="text-center mx-auto mb-12 lg:mb-20 max-w-[510px]">
-              <span className="text-black font-semibold text-lg text-primary mb-2 block">
+              {/* <span className="text-black font-semibold text-lg text-primary mb-2 block">
                 Our Services
-              </span>
+              </span> */}
               <h2
                 className="
                 text-black
@@ -19,11 +19,11 @@ export default function ServicesGrid() {
                   mb-4
                   "
               >
-                What We Offer
+                What I offer
               </h2>
               <p className="text-base text-body-color">
-                There are many variations of passages of Lorem Ipsum available
-                but the majority have suffered alteration in some form.
+                At the moment, as I have not had many gigs, I am willing to DJ for free. 
+                The only requirement is that my social media must be promoted prior to the event.
               </p>
             </div>
           </div>
@@ -68,11 +68,11 @@ export default function ServicesGrid() {
                 </svg>
               </div>
               <h4 className="font-semibold text-xl text-dark mb-3">
-                Refreshing Design
+                House Parties
               </h4>
               <p className="text-body-color">
-                We dejoy working with discerning clients, people for whom
-                qualuty, service, integrity & aesthetics.
+                I am comfortable with DJing house parties of any size. The only potential constraint could be transportation.
+                Please inquire within.
               </p>
             </div>
           </div>
@@ -121,11 +121,10 @@ export default function ServicesGrid() {
                 </svg>
               </div>
               <h4 className="font-semibold text-xl text-dark mb-3">
-                Based on Tailwind CSS
+                Private Venue Functions: You Organize
               </h4>
               <p className="text-body-color">
-                We dejoy working with discerning clients, people for whom
-                qualuty, service, integrity & aesthetics.
+                I am open to DJing at your private event at a venue. 
               </p>
             </div>
           </div>
@@ -180,11 +179,11 @@ export default function ServicesGrid() {
                 </svg>
               </div>
               <h4 className="font-semibold text-xl text-dark mb-3">
-                100+ Components
+              Private Venue Functions: I Organize
               </h4>
               <p className="text-body-color">
-                We dejoy working with discerning clients, people for whom
-                qualuty, service, integrity & aesthetics.
+                I love to host parties alongside my friends. I have experience and contacts who are good at 
+                organizing parties and other events. Please inquire if you are interested in having us host a party for you. 
               </p>
             </div>
           </div>
@@ -239,11 +238,10 @@ export default function ServicesGrid() {
                 </svg>
               </div>
               <h4 className="font-semibold text-xl text-dark mb-3">
-                Speed Optimized
+                Nightclub/Bar
               </h4>
               <p className="text-body-color">
-                We dejoy working with discerning clients, people for whom
-                qualuty, service, integrity & aesthetics.
+                I am open to DJing at a nightclub/bar.
               </p>
             </div>
           </div>
@@ -286,11 +284,11 @@ export default function ServicesGrid() {
                 </svg>
               </div>
               <h4 className="font-semibold text-xl text-dark mb-3">
-                Fully Customizable
+                Birthday Parties
               </h4>
               <p className="text-body-color">
-                We dejoy working with discerning clients, people for whom
-                qualuty, service, integrity & aesthetics.
+                I am happy to DJ for Birthday Parties of any age demographic. 
+                All I would require is an idea of the kind of music and age group of those in attendance.
               </p>
             </div>
           </div>
@@ -337,11 +335,10 @@ export default function ServicesGrid() {
                 </svg>
               </div>
               <h4 className="font-semibold text-xl text-dark mb-3">
-                Regular Updates
+                Other Cultural/Misc Events
               </h4>
               <p className="text-body-color">
-                We dejoy working with discerning clients, people for whom
-                qualuty, service, integrity & aesthetics.
+                I am open to DJ for cultural/misc events. Please just give me an idea of music expectations.
               </p>
             </div>
           </div>

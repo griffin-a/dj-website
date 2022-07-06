@@ -32,7 +32,7 @@ export default function PhotoTopNav() {
           <form className="hidden mb-0 lg:flex">
             <div className="relative">
               <input
-                className="h-10 pr-10 text-sm placeholder-gray-300 border-gray-200 rounded-lg focus:z-10"
+                className="h-10 pl-5 pr-10 text-sm placeholder-gray-300 border-gray-200 rounded-lg focus:z-10"
                 placeholder="Search..."
                 type="text"
               />
@@ -94,7 +94,7 @@ export default function PhotoTopNav() {
           <DropdownSectioned />
         </nav>
 
-        <div className="items-center hidden space-x-4 lg:flex">
+        {/* <div className="items-center hidden space-x-4 lg:flex">
           <a
             className="px-5 py-2 text-sm font-medium text-gray-600 bg-gray-100 rounded-lg"
             href=""
@@ -107,7 +107,7 @@ export default function PhotoTopNav() {
           >
             Sign up
           </a>
-        </div>
+        </div> */}
       </div>
 
       <div className="border-t border-gray-100 lg:hidden">
