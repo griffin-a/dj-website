@@ -74,7 +74,7 @@ export default function ContactForm() {
                       class="block w-full p-3 border border-gray-200 rounded-lg"
                       tabindex="0"
                     >
-                      <span class="text-sm font-medium"> Option 1 </span>
+                      <span class="text-sm font-medium"> Booking </span>
                     </label>
                   </div>
 
@@ -90,7 +90,7 @@ export default function ContactForm() {
                       class="block w-full p-3 border border-gray-200 rounded-lg"
                       tabindex="0"
                     >
-                      <span class="text-sm font-medium"> Option 2 </span>
+                      <span class="text-sm font-medium"> Quote </span>
                     </label>
                   </div>
 
@@ -106,7 +106,7 @@ export default function ContactForm() {
                       class="block w-full p-3 border border-gray-200 rounded-lg"
                       tabindex="0"
                     >
-                      <span class="text-sm font-medium"> Option 3 </span>
+                      <span class="text-sm font-medium"> Other </span>
                     </label>
                   </div>
                 </div>
@@ -128,7 +128,7 @@ export default function ContactForm() {
                     type="submit"
                     class="inline-flex items-center justify-center w-full px-5 py-3 text-white bg-black rounded-lg sm:w-auto"
                   >
-                    <span class="font-medium"> Send Enquiry </span>
+                    <span class="font-medium"> Send Inquiry </span>
 
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

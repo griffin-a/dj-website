@@ -1,14 +1,31 @@
+import EventCard from "../../components/EventCard";
+
 export default function Events() {
-    return (
-      <div>
-        <section class="text-gray-600 body-font">
-          <div class="max-w-5xl pt-52 pb-24 mx-auto">
-            <h1 class="text-80 text-center font-4 lh-6 ld-04 font-bold text-white mb-6">
-              Events page
-            </h1>
+  return (
+    <div>
+      <section class="text-gray-600 body-font">
+        <div class="max-w-5xl pt-7 mx-auto">
+          <h1 class="text-5xl text-center font-4 lh-6 ld-04 font-bold text-white mb-6">
+            Events page
+          </h1>
+        </div>
+        <section class="bg-gray-100">
+          <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
+            <EventCard
+              eventType="party"
+              title="First party"
+              description="Description"
+              imageUri="party-1.jpg"
+            />
+            <EventCard
+              eventType="party"
+              title="Second party"
+              description="Description"
+              imageUri="party-2.jpg"
+            />
           </div>
         </section>
-      </div>
-    );
-  }
-  
+      </section>
+    </div>
+  );
+}
