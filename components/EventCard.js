@@ -1,11 +1,14 @@
+import Image from "next/image";
+
 export default function EventCard({ eventType, title, description, imageUri }) {
   return (
     <div className="pb-5">
       <a className="relative block bg-black group" href="">
-        <img
+        <Image
           className="absolute inset-0 object-cover w-full h-full transition-opacity opacity-75  group-hover:opacity-50"
-          // src={`/../public/images/${imageUri}`}
           src={imageUri}
+          layout="fill" // required
+          objectFit="cover" // change to suit your needs
           alt=""
         />
         <div className="relative p-8">
@@ -17,9 +20,7 @@ export default function EventCard({ eventType, title, description, imageUri }) {
 
           <div className="mt-64">
             <div className="transition-all transform translate-y-8 opacity-0  group-hover:opacity-100 group-hover:translate-y-0">
-              <p className="text-sm text-white">
-                {description}
-              </p>
+              <p className="text-sm text-white">{description}</p>
             </div>
           </div>
         </div>

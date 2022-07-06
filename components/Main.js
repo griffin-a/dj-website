@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Main() {
   return (
     <section className="text-gray-600 body-font">
@@ -6,27 +8,26 @@ export default function Main() {
           Yeah G. Your one-stop-shop for musical versatility.
         </h1>
         <h2 className="text-2xl font-4 font-semibold lh-6 ld-04 pb-11 text-gray-200 text-center">
-          Griffin Almquist is Yeah g, a DJ who isn't afraid to work with any and every genre of music.
+          Griffin Almquist is Yeah G, a DJ who isn't afraid to work with any and
+          every genre of music.
           <br />
           Open to DJing events of all kinds.
         </h2>
         <div className="ml-6 text-center">
-          <a
-            className="inline-flex items-center py-3 font-semibold text-black transition duration-500 ease-in-out transform bg-transparent bg-white px-7 text-md md:mt-0 hover:text-black hover:bg-white focus:shadow-outline"
-            href="/"
-          >
-            <div className="flex text-lg">
-              <span className="justify-center">View All Templates</span>
-            </div>
-          </a>
-          <a
-            className="inline-flex items-center py-3 font-semibold tracking-tighter text-white transition duration-500 ease-in-out transform bg-transparent ml-11 bg-gradient-to-r from-blue-500 to-blue-800 px-14 text-md md:mt-0 focus:shadow-outline"
-            href="/"
-          >
-            <div className="flex text-lg">
-              <span className="justify-center">Purchase</span>
-            </div>
-          </a>
+          <Link href="/events">
+            <a className="mr-6 px-4 inline-block rounded-sm font-medium border border-solid cursor-pointer text-center transition-colors duration-200 inline-flex items-center py-3 font-semibold text-blue-400 bg-transparent border-blue-400 hover:bg-blue-400 hover:text-white">
+              <div className="flex text-lg">
+                <span className="justify-center">View Events I am DJing</span>
+              </div>
+            </a>
+          </Link>
+          <Link href="/contact">
+            <a className="px-4 inline-flex items-center py-3 font-semibold inline-block rounded-sm font-medium border border-solid cursor-pointer text-center transition-colors duration-200 text-white bg-green-600 border-green-400 hover:bg-green-800 hover:border-green-800">
+              <div className="flex text-lg">
+                <span className="justify-center">Contact Me</span>
+              </div>
+            </a>
+          </Link>
         </div>
       </div>
       <div className="container flex flex-col items-center justify-center mx-auto">
@@ -41,7 +42,7 @@ export default function Main() {
       </h2>
       <br></br>
       <p className="mx-auto text-xl text-center text-gray-300 font-normal leading-relaxed fs521 lg:w-2/3">
-        See what our clients have had to say about Yeah g!
+        See what our clients have had to say about Yeah G!
       </p>
       <div className="pt-12 pb-24 max-w-4xl mx-auto fsac4 md:px-1 px-3">
         <div className="ktq4">
@@ -55,7 +56,7 @@ export default function Main() {
             porttitor.
           </p>
         </div>
-        
+
         <div className="ktq4">
           <img className="w-10" src="https://nine4.app/favicon.png"></img>
           <h3 className="pt-3 font-semibold text-lg text-white">
@@ -90,7 +91,7 @@ export default function Main() {
           </p>
         </div>
       </div>
-      <div className="pt-32 pb-32 max-w-6xl mx-auto fsac4 md:px-1 px-3">
+      {/* <div className="pt-32 pb-32 max-w-6xl mx-auto fsac4 md:px-1 px-3">
         <div className="ktq4">
           <img src="https://nine4.app/images/nine4-3.png"></img>
           <h3 className="pt-3 font-semibold text-lg text-white">
@@ -117,7 +118,7 @@ export default function Main() {
             odio.
           </p>
         </div>
-      </div>
+      </div> */}
       <section className="relative pb-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
           <div className="py-24 md:py-36">
@@ -125,7 +126,8 @@ export default function Main() {
               Subscribe to our newsletter
             </h1>
             <h1 className="mb-9 text-2xl font-semibold text-gray-200">
-              Enter your email address to get notified about any upcoming events and updates!
+              Enter your email address to get notified about any upcoming events
+              and updates!
             </h1>
             <input
               type="email"
