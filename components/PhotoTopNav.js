@@ -1,3 +1,5 @@
+import DropdownSectioned from "./DropdownSectioned";
+
 export default function PhotoTopNav() {
   return (
     <header class="shadow-sm">
@@ -89,6 +91,7 @@ export default function PhotoTopNav() {
           <a class="text-gray-900" href="">
             Contact
           </a>
+          <DropdownSectioned />
         </nav>
 
         <div class="items-center hidden space-x-4 lg:flex">
