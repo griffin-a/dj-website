@@ -1,5 +1,6 @@
 import PaginationTab from "../../components/PaginationTab";
 import PhotoPage from "../../components/PhotoPage";
+import PhotoTopNav from "../../components/PhotoTopNav";
 import SidebarFilter from "../../components/SidebarFilter";
 
 export default function Photos() {
@@ -15,7 +16,7 @@ export default function Photos() {
           <div class="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
             <div class="display: inline-block">
               {/* <SidebarFilter /> */}
-
+              <PhotoTopNav />
               <PhotoPage />
             </div>
             <footer class="text-right">
