@@ -1,6 +1,9 @@
 module.exports = {
-  purge: ["./components/**/*.js", "./pages/**/*.js"],
-  darkMode: false, // or 'media' or 'class'
+  content: [
+    // Example content paths...
+    './public/**/*.html',
+    './src/**/*.{js,jsx,ts,tsx,vue}',
+  ],
   theme: {
     extend: {
       colors: {
@@ -22,4 +25,8 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  content: [
+    './pages/**/*.{html,js}',
+    './components/**/*.{html,js}',
+  ],
 };
