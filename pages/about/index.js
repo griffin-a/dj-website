@@ -33,7 +33,6 @@ export default function About() {
             <InfoPanel
               title="Introducing Yeah G"
               descriptions={descriptions}
-              imageUri="N/A"
             />
             <SkillsPanel
               title="Genres I Am Experienced With"
