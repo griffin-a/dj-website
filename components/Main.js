@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Main() {
   return (
@@ -31,11 +32,15 @@ export default function Main() {
         </div>
       </div>
       <div className="container flex flex-col items-center justify-center mx-auto">
-        <img
+        <Image
           className="object-cover object-center w-3/4 mb-10 border shadow-md g327"
           alt="DJ stock image"
-          src="./images/dj-1.jpg"
-        ></img>
+          src="/images/dj-1.jpg"
+          width="1000"
+          height="500"
+          // layout="fill"
+          // objectFit="contain"
+        />
       </div>
       <h2 className="pt-40 mb-1 text-2xl font-semibold tracking-tighter text-center text-gray-200 lg:text-7xl md:text-6xl">
         Testimonials
