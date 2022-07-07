@@ -1,27 +1,51 @@
 import { Schema, model, models } from "mongoose";
 
 const eventSchema = new Schema({
-  title: String,
-  description: String,
-  paid: Boolean,
+  title: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  paid: {
+    type: Boolean,
+  },
   hosts: {
     host: {
-      name: { String, required: true },
-      email: { String, required: true },
+      name: { type: String},
+      email: { type: String},
     },
   },
-  capacity: Number,
-  venue: String,
-  date: Date,
-  eventType: String,
+  capacity: {
+    type: Number,
+  },
+  venue: {
+    type: String,
+  },
+  date: {
+    type: Date,
+  },
+  eventType: {
+    type: String,
+  },
   photos: {
     photo: {
-        title: String,
-        link: String
-    }
+      title: {
+        type: String,
+      },
+      link: {
+        type: String,
+      },
+    },
   },
-  completed: Boolean,
-  currentlyBooked: Number
+  completed: {
+    type: Boolean,
+  },
+  currentlyBooked: {
+    type: Boolean,
+  },
 });
 
 const Event = models.Event || model("Event", eventSchema);
