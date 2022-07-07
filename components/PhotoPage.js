@@ -1,5 +1,6 @@
 import PaginationBoxes from "./PaginationBoxes";
 import SideFilters from "./SideFilters";
+import TopFilters from "./TopFilters";
 
 export default function PhotoPage() {
   return (
@@ -7,7 +8,8 @@ export default function PhotoPage() {
       {/* <h1 className="text-black text-center font-bold text-3xl">
         Image Gallery With Grid
       </h1> */}
-      <SideFilters />
+      {/* <SideFilters /> */}
+      <TopFilters />
 
       <div className="container lg:px-32 px-4 py-16 mx-auto items-center ">
         <div className="grid grid-cols-4 grid-rows-4 grid-flow-col gap-2">
