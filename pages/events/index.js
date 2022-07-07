@@ -1,8 +1,6 @@
 import EventCard from "../../components/EventCard";
-import Party1 from "../../public/images/party-1.jpg";
-import Party2 from "../../public/images/party-2.jpg";
 
-export default function Events() {
+export default function Events({ data }) {
   return (
     <div>
       <section class="text-gray-600 body-font">
@@ -13,7 +11,7 @@ export default function Events() {
         </div>
         <section class="bg-gray-100">
           <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
-            <EventCard
+            {/* <EventCard
               eventType="party"
               title="First party"
               description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
@@ -30,10 +28,31 @@ export default function Events() {
               minus veniam tempora deserunt? Molestiae eius quidem quam repellat."
               imageUri="/images/party-2.jpg"
               eventUri="/events/2"
-            />
+  /> */}
+            {data.events && (
+              <div>
+                {data.events.map((event) => {
+                  return (
+                    <EventCard
+                      eventType="party"
+                      title={event.title}
+                      description={event.description}
+                      eventUri={`/events/${event._id}`}
+                    />
+                  );
+                })}
+              </div>
+            )}
           </div>
         </section>
       </section>
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const res = await fetch("http://localhost:3000/api/events");
+  const data = await res.json();
+
+  return { props: { data } };
 }

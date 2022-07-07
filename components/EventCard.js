@@ -2,10 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function EventCard({
-  eventType,
-  title,
-  description,
-  imageUri,
+  eventType="Party",
+  title="Title",
+  description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. \
+  Aut qui hic atque tenetur quis eius quos ea neque sunt, accusantium soluta \
+  minus veniam tempora deserunt? Molestiae eius quidem quam repellat.",
+  imageUri="/images/party-1.jpg",
   eventUri = "/",
 }) {
   return (

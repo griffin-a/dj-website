@@ -42,6 +42,8 @@ export default function Photos() {
                 imageUri="/images/party-2.jpg"
                 eventLink="/events/2/photos"
               />
+
+              
             </div>
 
             <PaginationBoxes />
