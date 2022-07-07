@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function Main() {
   return (
-    <section className="text-gray-600 body-font">
-      <div className="max-w-5xl pt-7 mx-auto pb-10">
+    <section className="text-gray-600 body-font pt-20">
+      <div className="max-w-5xl pt-7 mx-auto pb-40">
         <h1 className="text-5xl text-center font-4 lh-6 ld-04 font-bold text-white mb-6">
           Yeah G. Your one-stop-shop for musical versatility.
         </h1>
@@ -126,7 +126,7 @@ export default function Main() {
       </div> */}
       <section className="relative pb-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
-          <div className="py-24 md:py-36">
+          <div className="py-24 md:py-20">
             <h1 className="mb-5 text-6xl font-bold text-white">
               Subscribe to our newsletter
             </h1>
