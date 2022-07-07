@@ -26,8 +26,22 @@ export default function Photos() {
           <div class="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
             <div class="display: grid lg:grid-cols-2 py-10 px-4 gap-x-8 sm:grid-cols-1 sm:gap-y-8">
               {/* <PhotoPage /> */}
-              <EventCardCTA />
-              <EventCardCTA />
+              <EventCardCTA
+                title="Party 1"
+                description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+              Aut qui hic atque tenetur quis eius quos ea neque sunt, accusantium soluta 
+              minus veniam tempora deserunt? Molestiae eius quidem quam repellat."
+                imageUri="/images/party-1.jpg"
+                eventLink="/events/1/photos"
+              />
+              <EventCardCTA
+                title="Party 2"
+                description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+              Aut qui hic atque tenetur quis eius quos ea neque sunt, accusantium soluta 
+              minus veniam tempora deserunt? Molestiae eius quidem quam repellat."
+                imageUri="/images/party-2.jpg"
+                eventLink="/events/2/photos"
+              />
             </div>
 
             <PaginationBoxes />
