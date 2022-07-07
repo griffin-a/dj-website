@@ -12,12 +12,12 @@ const eventSchema = new Schema({
   paid: {
     type: Boolean,
   },
-  hosts: {
-    host: {
-      name: { type: String},
-      email: { type: String},
+  hosts: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Host",
     },
-  },
+  ],
   capacity: {
     type: Number,
   },
@@ -30,16 +30,12 @@ const eventSchema = new Schema({
   eventType: {
     type: String,
   },
-  photos: {
-    photo: {
-      title: {
-        type: String,
-      },
-      link: {
-        type: String,
-      },
+  photos: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Photo",
     },
-  },
+  ],
   completed: {
     type: Boolean,
   },
