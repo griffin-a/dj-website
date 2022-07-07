@@ -16,14 +16,14 @@ export default function Main() {
         </h2>
         <div className="ml-6 text-center">
           <Link href="/events">
-            <a className="mr-6 px-4 inline-block rounded-sm font-medium border border-solid cursor-pointer text-center transition-colors duration-200 inline-flex items-center py-3 font-semibold text-blue-400 bg-transparent border-blue-400 hover:bg-blue-400 hover:text-white">
+            <a className="content-center justify-center mr-6 px-4 inline-block rounded-sm font-medium border border-solid cursor-pointer text-center transition-colors duration-200 inline-flex items-center py-3 font-semibold text-blue-400 bg-transparent border-blue-400 hover:bg-blue-400 hover:text-white">
               <div className="flex text-lg">
                 <span className="justify-center">View Events I am DJing</span>
               </div>
             </a>
           </Link>
           <Link href="/contact">
-            <a className="px-4 inline-flex items-center py-3 font-semibold inline-block rounded-sm font-medium border border-solid cursor-pointer text-center transition-colors duration-200 text-white bg-green-600 border-green-400 hover:bg-green-800 hover:border-green-800">
+            <a className="content-center justify-center px-4 inline-flex items-center py-3 font-semibold inline-block rounded-sm font-medium border border-solid cursor-pointer text-center transition-colors duration-200 text-white bg-green-600 border-green-400 hover:bg-green-800 hover:border-green-800">
               <div className="flex text-lg">
                 <span className="justify-center">Contact Me</span>
               </div>
