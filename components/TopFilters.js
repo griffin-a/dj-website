@@ -1,3 +1,4 @@
+import Button from "./Button";
 import RadioGroup from "./RadioGroup";
 import SelectGroup from "./SelectGroup";
 
@@ -47,6 +48,7 @@ export default function TopFilters() {
       </div>
 
       <div className="border-b py-4 border-gray-300">
+        <div className="lg:flex lg:flex-row">
         <SelectGroup
           label="Select tags"
           placeholder="Select..."
@@ -66,6 +68,7 @@ export default function TopFilters() {
             },
           ]}
         />
+        </div>
       </div>
     </div>
   );
