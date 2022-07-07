@@ -1,5 +1,9 @@
 import connectMongoose from "../../../utils/connectMongoose";
 import Event from "../../../models/Event";
+import MongooseService from "../../../services/MongooseService";
+
+const mongooseService = new MongooseService();
+await mongooseService.init();
 
 export default async (req, res) => {
   // GET /api/events
