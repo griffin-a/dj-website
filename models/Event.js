@@ -42,6 +42,9 @@ const eventSchema = new Schema({
   currentlyBooked: {
     type: Boolean,
   },
+  imageUri: {
+    type: String,
+  }
 });
 
 const Event = models.Event || model("Event", eventSchema);
