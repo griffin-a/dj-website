@@ -20,6 +20,7 @@ export default function Events() {
               Aut qui hic atque tenetur quis eius quos ea neque sunt, accusantium soluta 
               minus veniam tempora deserunt? Molestiae eius quidem quam repellat."
               imageUri="/images/party-1.jpg"
+              eventUri="/events/1"
             />
             <EventCard
               eventType="party"
@@ -28,6 +29,7 @@ export default function Events() {
               Aut qui hic atque tenetur quis eius quos ea neque sunt, accusantium soluta 
               minus veniam tempora deserunt? Molestiae eius quidem quam repellat."
               imageUri="/images/party-2.jpg"
+              eventUri="/events/2"
             />
           </div>
         </section>
