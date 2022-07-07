@@ -29,7 +29,7 @@ class EventDAL {
       throw error;
     }
 
-    if (!events) {
+    if (!events || events.length === 0) {
       throw new Error("No events could be found!");
     }
 
@@ -53,27 +53,26 @@ class EventDAL {
   }
 
   async createEvent(event) {
-    console.log("called");
-    const {
-      title,
-      description,
-      paid,
-      hosts,
-      capacity,
-      venue,
-      date,
-      eventType,
-      photos,
-      completed,
-      currentlyBooked,
-    } = event;
+    // const {
+    //   title,
+    //   description,
+    //   paid,
+    //   hosts,
+    //   capacity,
+    //   venue,
+    //   date,
+    //   eventType,
+    //   photos,
+    //   completed,
+    //   currentlyBooked,
+    // } = event;
 
     try {
-      const newEvent = new Event({ event });
+      const newEvent = new Event(event);
       await newEvent.save();
       return newEvent._id;
     } catch (error) {
-      console.log(error);
+    //   console.log(error);
       throw error;
     }
   }
@@ -93,7 +92,7 @@ class PhotoDAL {
 
 class HostDAL {
   constructor() {}
-  
+
   async getAllHosts() {}
 
   async getAllHostsByEventId() {}

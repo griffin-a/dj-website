@@ -12,7 +12,7 @@ export default class EventController {
       res.statusCode = 200;
       res.json({ events });
     } catch (error) {
-      console.log(error);
+    //   console.log(error);
       res.statusCode = 500;
       res.json({ error: "Error in getting all events!" });
     }
@@ -36,6 +36,7 @@ export default class EventController {
     } = req.body.event;
 
     const event = req.body.event;
+    console.log(event);
 
     try {
       const newEventId = await mongooseService.EventDAL.createEvent(event);
