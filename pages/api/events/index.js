@@ -7,17 +7,41 @@ export default async (req, res) => {
     await connectMongoose();
     console.log("Connected to MongoDb");
     res.statusCode = 200;
-    res.json({name: "Succcessfully connected to MongoDb"});
+    res.json({ name: "Succcessfully connected to MongoDb" });
 
     // POST /api/events
   } else if (req.method == "POST") {
-    const { title, description } = req.body;
+    const {
+      title,
+      description,
+      paid,
+      hosts,
+      capacity,
+      venue,
+      date,
+      eventType,
+      photos,
+      completed,
+      currentlyBooked,
+    } = req.body;
     await connectMongoose();
     console.log("Connected to MongoDb");
 
-    const newEvent = new Event({title, description});
+    const newEvent = new Event({
+      title,
+      description,
+      paid,
+      hosts,
+      capacity,
+      venue,
+      date,
+      eventType,
+      photos,
+      completed,
+      currentlyBooked,
+    });
     await newEvent.save();
-    
+
     res.statusCode = 200;
     res.json(newEvent);
     // DELETE /api/events
