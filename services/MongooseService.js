@@ -2,87 +2,101 @@ import Event from "../models/Event";
 import Photo from "../models/Photo";
 import Host from "../models/Host";
 
-import connectMongoose from "../utills/connectMongoose";
+import connectMongoose from "../utils/connectMongoose";
 
 // The data-access-layer using Mongoose
 export default class MongooseService {
+  constructor() {
+    this.EventDAL = new EventDAL();
+    this.PhotoDAL = new PhotoDAL();
+    this.HostDAL = new HostDAL();
+  }
+
   async init() {
     await connectMongoose();
   }
+}
 
-  static EventDAL = class {
-    async getAllEvents() {
-      let events;
+class EventDAL {
+  constructor() {}
 
-      try {
-        events = await Event.find();
-      } catch (error) {
-        throw error;
-      }
+  async getAllEvents() {
+    let events;
 
-      if (!events) {
-        throw new Error("No events could be found!");
-      }
-
-      return events;
+    try {
+      events = await Event.find();
+    } catch (error) {
+      throw error;
     }
 
-    async getEventById(id) {
-      let event;
-
-      try {
-        event = await Event.findById(id);
-      } catch (error) {
-        throw error;
-      }
-
-      if (!event) {
-        throw new Error("No event could be found by the given id!");
-      }
-
-      return event;
+    if (!events) {
+      throw new Error("No events could be found!");
     }
 
-    async createEvent(event) {
-      const {
-        title,
-        description,
-        paid,
-        hosts,
-        capacity,
-        venue,
-        date,
-        eventType,
-        photos,
-        completed,
-        currentlyBooked,
-      } = event;
+    return events;
+  }
 
-      try {
-        const newEvent = new Event({ event });
-        await newEvent.save();
-        return newEvent._id;
-      } catch (error) {
-        throw error;
-      }
+  async getEventById(id) {
+    let event;
+
+    try {
+      event = await Event.findById(id);
+    } catch (error) {
+      throw error;
     }
 
-    async updateEvent() {}
-  };
+    if (!event) {
+      throw new Error("No event could be found by the given id!");
+    }
 
-  static PhotoDAL = class {
-    async getAllPhotos() {}
+    return event;
+  }
 
-    async getAllPhotosByEventId() {}
+  async createEvent(event) {
+    console.log("called");
+    const {
+      title,
+      description,
+      paid,
+      hosts,
+      capacity,
+      venue,
+      date,
+      eventType,
+      photos,
+      completed,
+      currentlyBooked,
+    } = event;
 
-    async updatePhotoById() {}
-  };
+    try {
+      const newEvent = new Event({ event });
+      await newEvent.save();
+      return newEvent._id;
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+  }
 
-  static HostDAL = class {
-    async getAllHosts() {}
+  async updateEvent() {}
+}
 
-    async getAllHostsByEventId() {}
+class PhotoDAL {
+  constructor() {}
 
-    async updateHost() {}
-  };
+  async getAllPhotos() {}
+
+  async getAllPhotosByEventId() {}
+
+  async updatePhotoById() {}
+}
+
+class HostDAL {
+  constructor() {}
+  
+  async getAllHosts() {}
+
+  async getAllHostsByEventId() {}
+
+  async updateHost() {}
 }
