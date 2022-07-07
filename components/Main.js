@@ -4,8 +4,8 @@ import Image from "next/image";
 export default function Main() {
   return (
     <section className="text-gray-600 body-font">
-      <div className="max-w-5xl pt-52 pb-24 mx-auto">
-        <h1 className="text-80 text-center font-4 lh-6 ld-04 font-bold text-white mb-6">
+      <div className="max-w-5xl pt-7 mx-auto pb-10">
+        <h1 className="text-5xl text-center font-4 lh-6 ld-04 font-bold text-white mb-6">
           Yeah G. Your one-stop-shop for musical versatility.
         </h1>
         <h2 className="text-2xl font-4 font-semibold lh-6 ld-04 pb-11 text-gray-200 text-center">
