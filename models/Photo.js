@@ -7,7 +7,7 @@ const photoSchema = new Schema({
   link: {
     type: String,
   },
-  events: {
+  event: {
     type: Schema.Types.ObjectId,
     ref: "Event",
   },
