@@ -2,14 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function EventCardCTA({
-  eventLink = "#",
+  eventUri = "#",
   title = "Default",
   description = "Default description goes here",
   imageUri = "/images/party-1.jpg",
   backgroundColor = "bg-red-700",
 }) {
   return (
-    <Link href={eventLink}>
+    <Link href={eventUri}>
       <a className="relative flex items-end w-full bg-black h-96 group">
         <Image
           alt={title}

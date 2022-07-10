@@ -1,10 +1,12 @@
 import PaginationBoxes from "../../components/PaginationBoxes";
-import PaginationTab from "../../components/PaginationTab";
-import PhotoPage from "../../components/PhotoPage";
-import PhotoTopNav from "../../components/PhotoTopNav";
 import EventCardCTA from "../../components/EventCardCTA";
+import { wrapper } from "../../store/store";
+import { useSelector } from "react-redux";
+import { retrieve } from "../../store/eventsSlice";
 
 export default function Photos() {
+  const { events } = useSelector((state) => state.events);
+
   return (
     <div>
       <section class="text-gray-600 body-font">
@@ -26,7 +28,7 @@ export default function Photos() {
           <div class="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
             <div class="display: grid lg:grid-cols-2 py-10 px-4 gap-x-8 sm:grid-cols-1 sm:gap-y-8">
               {/* <PhotoPage /> */}
-              <EventCardCTA
+              {/* <EventCardCTA
                 title="Party 1"
                 description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
               Aut qui hic atque tenetur quis eius quos ea neque sunt, accusantium soluta 
@@ -41,9 +43,22 @@ export default function Photos() {
               minus veniam tempora deserunt? Molestiae eius quidem quam repellat."
                 imageUri="/images/party-2.jpg"
                 eventLink="/events/2/photos"
-              />
+              /> */}
 
-              
+              {events && (
+                <div>
+                  {events.map((event) => {
+                    return (
+                      <EventCardCTA
+                        key={event._id}
+                        title={event.title}
+                        description={event.description}
+                        eventUri={`/events/${event._id}`}
+                      />
+                    );
+                  })}
+                </div>
+              )}
             </div>
 
             <PaginationBoxes />
@@ -53,3 +68,13 @@ export default function Photos() {
     </div>
   );
 }
+
+export const getServerSideProps = wrapper.getServerSideProps(
+  (store) => async () => {
+    const res = await fetch("http://localhost:3000/api/events");
+    const data = await res.json();
+    console.log(data);
+
+    store.dispatch(retrieve(data.events));
+  }
+);
