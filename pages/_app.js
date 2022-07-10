@@ -1,7 +1,6 @@
 import "../styles/globals.css";
-import Header from "../components/headers/Header";
-import AltHeader2 from "../components/headers/AltHeader2";
 import Footer from "../components/Footer";
+import { wrapper } from "../store/store";
 import ClassicNav from "../components/headers/ClassicNav";
 import Head from "next/head";
 import { config, dom } from "@fortawesome/fontawesome-svg-core";
@@ -20,4 +19,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
+export default wrapper.withRedux(MyApp);
