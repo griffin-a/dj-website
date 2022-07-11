@@ -12,7 +12,7 @@ const masterReducer = (state, action) => {
       ...state, // use previous state
       events: {
         events: action.payload.events.events,
-        currentEvent: action.payload.events.currentEvent
+        currentEvent: state.events.currentEvent
       },
     };
     return nextState;

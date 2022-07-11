@@ -7,6 +7,22 @@ import { retrieve } from "../../store/eventsSlice";
 export default function Photos() {
   const { events } = useSelector((state) => state.events);
 
+  const getEvents = () => {
+    const output = [];
+
+    for (const [key, value] of Object.entries(events)) {
+      output.push(<EventCardCTA
+        key={key}
+        eventType="party"
+        title={value.title}
+        description={value.description}
+        eventId={key}
+      />)
+    }
+
+    return output;
+  }
+
   return (
     <div>
       <section className="text-gray-600 body-font">
@@ -47,16 +63,7 @@ export default function Photos() {
 
               {events && (
                 <>
-                  {events.map((event) => {
-                    return (
-                      <EventCardCTA
-                        key={event._id}
-                        title={event.title}
-                        description={event.description}
-                        eventUri={`/events/${event._id}/photos`}
-                      />
-                    );
-                  })}
+                  {getEvents()}
                 </>
               )}
             </div>
@@ -73,8 +80,21 @@ export const getServerSideProps = wrapper.getServerSideProps(
   (store) => async () => {
     const res = await fetch("http://localhost:3000/api/events");
     const data = await res.json();
-    console.log(data);
+    const container = {};
 
-    store.dispatch(retrieve(data.events));
+    for (const [key, value] of Object.entries(data.events)) {
+      const { _id, title, description, paid, hosts, photos } = value;
+      // console.log(value); 
+
+      container[_id] = {
+        title,
+        description,
+      }
+    }
+
+    console.log(container)
+
+
+    store.dispatch(retrieve(container));
   }
 );

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setCurrentEvent } from "../store/eventsSlice";
 
 export default function EventCard({
@@ -13,11 +13,13 @@ export default function EventCard({
   eventId = undefined,
 }) {
   const dispatch = useDispatch();
+  const { events } = useSelector((state) => state.events);
+
 
   return (
     <div className="pb-5">
       <Link href={`/events/${eventId}`}>
-        <a onClick={() => dispatch(setCurrentEvent(eventId))} className="relative block bg-black group">
+        <a onClick={() => dispatch(setCurrentEvent(events[eventId]))} className="relative block bg-black group">
           <Image
             className="absolute inset-0 object-cover w-full h-full transition-opacity opacity-75  group-hover:opacity-50"
             src={imageUri}
