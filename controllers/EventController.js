@@ -48,4 +48,21 @@ export default class EventController {
       res.json({ error: "Error in creating event!" });
     }
   }
+
+  async getEventById(req, res) {
+    await mongooseService.init();
+    // console.log(.query);
+
+    const { eventId } = req.query;
+
+    try {
+       const event = await mongooseService.EventDAL.getEventById(eventId);
+       res.statusCode = 200;
+       res.json(event);
+    } catch (error) {
+      console.log(error);
+      res.statusCode = 500;
+      res.json({ error: "Error in finding event by given id!" });
+    }
+  }
 }

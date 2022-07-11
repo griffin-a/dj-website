@@ -1,4 +1,10 @@
+import EventController from "../../../../controllers/EventController";
+
+const eventController = new EventController();
+
 export default (req, res) => {
-    res.statusCode = 200
-    res.json({ name: 'Welcome to the event id page in the API!' })
+  // GET /events/eventIdHere
+  if (req.method == "GET") {
+    return eventController.getEventById(req, res);
+  }
   }
