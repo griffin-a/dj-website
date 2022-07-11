@@ -1,7 +1,5 @@
 import Head from "next/head";
-import Header from "../components/headers/Header";
 import Main from "../components/Main";
-import Footer from "../components/Footer";
 import { NextSeo } from "next-seo";
 
 export default function Home() {
@@ -17,7 +15,7 @@ export default function Home() {
       />
       <Head>
         <title>Yeah g</title>
-        <link rel="icon" href="/favicon.png" />
+        {/* <link rel="icon" href="/favicon.png" /> */}
       </Head>
       {/* <Header /> */}
       <Main />

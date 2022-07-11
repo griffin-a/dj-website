@@ -12,6 +12,7 @@ const masterReducer = (state, action) => {
       ...state, // use previous state
       events: {
         events: action.payload.events.events,
+        currentEvent: action.payload.events.currentEvent
       },
     };
     return nextState;
@@ -25,4 +26,4 @@ export const makeStore = () =>
     reducer: masterReducer,
   });
 
-export const wrapper = createWrapper(makeStore, { debug: true });
+export const wrapper = createWrapper(makeStore);

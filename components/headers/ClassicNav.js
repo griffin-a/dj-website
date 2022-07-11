@@ -3,13 +3,10 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faQuestionCircle,
-  faBell,
   faBars,
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
-import Avatar from "../../components/Avatar";
 import Button from "../../components/Button";
 
 function ClassicNav() {
@@ -19,10 +16,6 @@ function ClassicNav() {
   return (
     <div className="flex items-center h-20 px-6 justify-between border-b border-gray-300 bg-gray-800 text-white relative z-50">
       <div className="h-8">
-        {/* <img
-          src="https://gustui.s3.amazonaws.com/Gust+Logo+White.png"
-          className="h-full"
-        /> */}
         <Link href="/">
           <button className="text-2xl">Yeah G</button>
         </Link>

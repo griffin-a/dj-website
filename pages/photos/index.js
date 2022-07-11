@@ -46,7 +46,7 @@ export default function Photos() {
               /> */}
 
               {events && (
-                <div>
+                <>
                   {events.map((event) => {
                     return (
                       <EventCardCTA
@@ -57,7 +57,7 @@ export default function Photos() {
                       />
                     );
                   })}
-                </div>
+                </>
               )}
             </div>
 

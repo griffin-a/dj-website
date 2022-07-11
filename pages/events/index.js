@@ -6,6 +6,22 @@ import { retrieve } from "../../store/eventsSlice";
 export default function Events() {
   const { events } = useSelector((state) => state.events);
 
+  const getEvents = () => {
+    const output = [];
+
+    for (const [key, value] of Object.entries(events)) {
+      output.push(<EventCard
+        key={key}
+        eventType="party"
+        title={value.title}
+        description={value.description}
+        eventId={key}
+      />)
+    }
+
+    return output;
+  }
+
   return (
     <div>
       <section className="text-gray-600 body-font">
@@ -34,7 +50,7 @@ export default function Events() {
               imageUri="/images/party-2.jpg"
               eventUri="/events/2"
   /> */}
-            {events && ( 
+            {/* {events && (
               <div>
                 {events.map((event) => {
                   return (
@@ -43,11 +59,16 @@ export default function Events() {
                       eventType="party"
                       title={event.title}
                       description={event.description}
-                      eventUri={`/events/${event._id}`}
+                      eventId={event._id}
                     />
                   );
                 })}
               </div>
+            )} */}
+            {events && (
+              <>
+             {getEvents()}
+             </>
             )}
           </div>
         </section>
@@ -60,8 +81,21 @@ export const getServerSideProps = wrapper.getServerSideProps(
   (store) => async () => {
     const res = await fetch("http://localhost:3000/api/events");
     const data = await res.json();
-    console.log(data);
+    const container = {};
 
-    store.dispatch(retrieve(data.events));
+    for (const [key, value] of Object.entries(data.events)) {
+      const { _id, title, description, paid, hosts, photos } = value;
+      // console.log(value); 
+
+      container[_id] = {
+        title,
+        description,
+      }
+    }
+
+    console.log(container)
+
+
+    store.dispatch(retrieve(container));
   }
 );

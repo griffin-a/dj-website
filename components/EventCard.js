@@ -1,19 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useDispatch } from "react-redux";
+import { setCurrentEvent } from "../store/eventsSlice";
 
 export default function EventCard({
-  eventType="Party",
-  title="Title",
-  description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. \
+  eventType = "Party",
+  title = "Title",
+  description = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. \
   Aut qui hic atque tenetur quis eius quos ea neque sunt, accusantium soluta \
   minus veniam tempora deserunt? Molestiae eius quidem quam repellat.",
-  imageUri="/images/party-1.jpg",
-  eventUri = "/",
+  imageUri = "/images/party-1.jpg",
+  eventId = undefined,
 }) {
+  const dispatch = useDispatch();
+
   return (
     <div className="pb-5">
-      <Link href={eventUri}>
-        <a className="relative block bg-black group">
+      <Link href={`/events/${eventId}`}>
+        <a onClick={() => dispatch(setCurrentEvent(eventId))} className="relative block bg-black group">
           <Image
             className="absolute inset-0 object-cover w-full h-full transition-opacity opacity-75  group-hover:opacity-50"
             src={imageUri}
