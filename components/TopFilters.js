@@ -12,7 +12,7 @@ export default function TopFilters() {
     console.log(selectedFilter);
     // console.log(filters);
     setFilters([selectedFilter]);
-  }
+  };
 
   useEffect(() => {}, [filters]);
 
@@ -88,7 +88,7 @@ export default function TopFilters() {
 
         <br />
       </div>
-      <div className="justify-center cursor-pointer inline-flex items-center">
+      <div>
         <Badge />
       </div>
     </div>

@@ -34,7 +34,7 @@ export default function Events() {
               imageUri="/images/party-2.jpg"
               eventUri="/events/2"
   /> */}
-            {events && (
+            {events && ( 
               <div>
                 {events.map((event) => {
                   return (

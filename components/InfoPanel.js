@@ -24,7 +24,7 @@ export default function InfoPanel({ title, imageUri="/images/profile.jpg", descr
           <div className="lg:py-16">
             <article className="space-y-4 text-gray-600">
               {descriptions.map(desc => {
-                return <p>{desc}</p>
+                return <p key={desc}>{desc}</p>
               })}
             </article>
           </div>
