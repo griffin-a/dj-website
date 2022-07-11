@@ -9,11 +9,12 @@ export default function EventId() {
   const { currentEvent } = useSelector((state) => state.events);
   const dispatch = useDispatch();
   const router = useRouter();
+  const { isReady } = router;
   const { eventId } = router.query;
 
   useEffect(() => {
     if (!currentEvent) {
-      if (!eventId) {
+      if (!isReady) {
         return;
       }
 
