@@ -24,7 +24,7 @@ export default function ContactForm() {
             <div className="p-8 bg-white rounded-lg shadow-lg lg:p-12 lg:col-span-3">
               <form action="" className="space-y-4">
                 <div>
-                  <label className="sr-only" for="name">
+                  <label className="sr-only" htmlFor="name">
                     Name
                   </label>
                   <input
@@ -37,7 +37,7 @@ export default function ContactForm() {
 
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div>
-                    <label className="sr-only" for="email">
+                    <label className="sr-only" htmlFor="email">
                       Email
                     </label>
                     <input
@@ -49,7 +49,7 @@ export default function ContactForm() {
                   </div>
 
                   <div>
-                    <label className="sr-only" for="phone">
+                    <label className="sr-only" htmlFor="phone">
                       Phone
                     </label>
                     <input
@@ -67,12 +67,12 @@ export default function ContactForm() {
                       className="sr-only"
                       id="option1"
                       type="radio"
-                      tabindex="-1"
+                      tabIndex="-1"
                     />
                     <label
-                      for="option1"
+                      htmlFor="option1"
                       className="block w-full p-3 border border-gray-200 rounded-lg"
-                      tabindex="0"
+                      tabIndex="0"
                     >
                       <span className="text-sm font-medium"> Booking </span>
                     </label>
@@ -83,12 +83,12 @@ export default function ContactForm() {
                       className="sr-only"
                       id="option2"
                       type="radio"
-                      tabindex="-1"
+                      tabIndex="-1"
                     />
                     <label
-                      for="option2"
+                      htmlFor="option2"
                       className="block w-full p-3 border border-gray-200 rounded-lg"
-                      tabindex="0"
+                      tabIndex="0"
                     >
                       <span className="text-sm font-medium"> Quote </span>
                     </label>
@@ -99,12 +99,12 @@ export default function ContactForm() {
                       className="sr-only"
                       id="option3"
                       type="radio"
-                      tabindex="-1"
+                      tabIndex="-1"
                     />
                     <label
-                      for="option3"
+                      htmlFor="option3"
                       className="block w-full p-3 border border-gray-200 rounded-lg"
-                      tabindex="0"
+                      tabIndex="0"
                     >
                       <span className="text-sm font-medium"> Other </span>
                     </label>
@@ -112,7 +112,7 @@ export default function ContactForm() {
                 </div>
 
                 <div>
-                  <label className="sr-only" for="message">
+                  <label className="sr-only" htmlFor="message">
                     Message
                   </label>
                   <textarea
@@ -138,9 +138,9 @@ export default function ContactForm() {
                       stroke="currentColor"
                     >
                       <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
                         d="M14 5l7 7m0 0l-7 7m7-7H3"
                       />
                     </svg>
