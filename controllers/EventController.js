@@ -6,9 +6,10 @@ export default class EventController {
 
   async getAllEvents(req, res) {
     await mongooseService.init();
-
+    const page = parseInt(req.query.page);
+    
     try {
-      const events = await mongooseService.EventDAL.getAllEvents();
+      const events = await mongooseService.EventDAL.getAllEvents(page);
       res.statusCode = 200;
       res.json({ events });
     } catch (error) {
