@@ -20,13 +20,12 @@ export default class MongooseService {
 class EventDAL {
   constructor() {}
 
-  async getAllEvents(page = 1) {
-    const PAGE_SIZE = 2;
-    const skip = (page - 1) * PAGE_SIZE;
+  async getAllEvents(page, limit) {
+    const skip = (page - 1) * limit;
     let events;
 
     try {
-      events = await Event.find({}).skip(skip).limit(PAGE_SIZE);
+      events = await Event.find({}).skip(skip).limit(limit).exec();
     } catch (error) {
       throw error;
     }
@@ -36,6 +35,18 @@ class EventDAL {
     }
 
     return events;
+  }
+
+  async getDocumentCount() {
+    let count; 
+
+    try {
+      count = await Event.countDocuments();
+    } catch (error) {
+      throw error;
+    }
+
+    return count;
   }
 
   async getEventById(id) {

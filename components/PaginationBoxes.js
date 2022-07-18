@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-function PaginationBoxes() {
+function PaginationBoxes({ currentPage = 1, setCurrentPage = undefined }) {
   return (
     <div className="flex flex-col sm:flex-row items-center justify-center pb-10">
       <div>
@@ -11,6 +11,7 @@ function PaginationBoxes() {
           Prev
         </a>
       </div>
+
       <div className="flex-1 flex flex-wrap item-center justify-center">
         <a
           href="#"
@@ -43,6 +44,8 @@ function PaginationBoxes() {
           5
         </a>
       </div>
+
+      
       <div>
         <a
           href="#"
@@ -52,7 +55,7 @@ function PaginationBoxes() {
         </a>
       </div>
     </div>
-  )
+  );
 }
 
-export default PaginationBoxes
+export default PaginationBoxes;

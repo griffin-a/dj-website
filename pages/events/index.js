@@ -2,12 +2,17 @@ import EventCard from "../../components/EventCard";
 import { wrapper } from "../../store/store";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
+import useSWR from "swr";
 import { retrieve } from "../../store/eventsSlice";
 import PaginationBoxes from "../../components/PaginationBoxes";
 
 export default function Events() {
   const { events } = useSelector((state) => state.events);
-  const { currentPage, setCurrentPage } = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  useEffect(() => {
+    console.log(currentPage);
+  }, [currentPage]);
 
   const getEvents = () => {
     const output = [];

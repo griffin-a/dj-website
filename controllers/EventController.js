@@ -6,14 +6,19 @@ export default class EventController {
 
   async getAllEvents(req, res) {
     await mongooseService.init();
-    const page = parseInt(req.query.page);
-    
+    const { page = 1, limit = 2 } = parseInt(req.query);
+
     try {
-      const events = await mongooseService.EventDAL.getAllEvents(page);
+      const events = await mongooseService.EventDAL.getAllEvents(page, limit);
+      const count = await mongooseService.EventDAL.getDocumentCount();
       res.statusCode = 200;
-      res.json({ events });
+      res.json({
+        events,
+        totalPages: Math.ceil(count / limit),
+        currentPage: page,
+      });
     } catch (error) {
-    //   console.log(error);
+      //   console.log(error);
       res.statusCode = 500;
       res.json({ error: "Error in getting all events!" });
     }
@@ -57,9 +62,9 @@ export default class EventController {
     const { eventId } = req.query;
 
     try {
-       const event = await mongooseService.EventDAL.getEventById(eventId);
-       res.statusCode = 200;
-       res.json(event);
+      const event = await mongooseService.EventDAL.getEventById(eventId);
+      res.statusCode = 200;
+      res.json(event);
     } catch (error) {
       console.log(error);
       res.statusCode = 500;
