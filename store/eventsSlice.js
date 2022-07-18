@@ -2,7 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     events: {},
-    currentEvent: null
+    currentEvent: null,
+    pagination: {}
 }
 
 export const eventsSlice = createSlice({
@@ -19,10 +20,13 @@ export const eventsSlice = createSlice({
         },
         setCurrentEvent: (state, action) => {
             state.currentEvent = action.payload;
+        },
+        setPagination: (state, action) => {
+            state.pagination = action.payload;
         }
     }
 });
 
-export const { create, retrieve, setCurrentEvent } = eventsSlice.actions;
+export const { create, retrieve, setCurrentEvent, setPagination } = eventsSlice.actions;
 
 export default eventsSlice.reducer;

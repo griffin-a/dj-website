@@ -14,8 +14,10 @@ export default class EventController {
       res.statusCode = 200;
       res.json({
         events,
-        totalPages: Math.ceil(count / limit),
-        currentPage: page,
+        pagination: {
+          totalPages: Math.ceil(count / limit),
+          currentPage: page,
+        }
       });
     } catch (error) {
       //   console.log(error);

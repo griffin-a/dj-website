@@ -12,7 +12,8 @@ const masterReducer = (state, action) => {
       ...state, // use previous state
       events: {
         events: action.payload.events.events,
-        currentEvent: state.events.currentEvent
+        currentEvent: state.events.currentEvent,
+        pagination: action.payload.events.pagination
       },
     };
     return nextState;

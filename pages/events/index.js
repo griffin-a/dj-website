@@ -3,7 +3,7 @@ import { wrapper } from "../../store/store";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import useSWR from "swr";
-import { retrieve } from "../../store/eventsSlice";
+import { retrieve, setPagination } from "../../store/eventsSlice";
 import PaginationBoxes from "../../components/PaginationBoxes";
 
 export default function Events() {
@@ -67,8 +67,11 @@ export const getServerSideProps = wrapper.getServerSideProps(
       };
     }
 
-    console.log(container);
+    const paginationData = {
+      ...data.pagination
+    }
 
     store.dispatch(retrieve(container));
+    store.dispatch(setPagination(paginationData));
   }
 );
