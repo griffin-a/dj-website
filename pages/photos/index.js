@@ -2,7 +2,7 @@ import PaginationBoxes from "../../components/PaginationBoxes";
 import EventCardCTA from "../../components/EventCardCTA";
 import { wrapper } from "../../store/store";
 import { useSelector } from "react-redux";
-import { retrieve } from "../../store/eventsSlice";
+import { retrieve, setPagination } from "../../store/eventsSlice";
 
 export default function Photos() {
   const { events } = useSelector((state) => state.events);
@@ -66,17 +66,18 @@ export const getServerSideProps = wrapper.getServerSideProps(
 
     for (const [key, value] of Object.entries(data.events)) {
       const { _id, title, description, paid, hosts, photos } = value;
-      // console.log(value); 
 
       container[_id] = {
         title,
         description,
-      }
+      };
     }
 
-    console.log(container)
-
+    const paginationData = {
+      ...data.pagination
+    }
 
     store.dispatch(retrieve(container));
+    store.dispatch(setPagination(paginationData));
   }
 );
