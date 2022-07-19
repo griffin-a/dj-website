@@ -8,6 +8,9 @@ import PaginationBoxes from "../../components/PaginationBoxes";
 
 export default function Events() {
   const { events } = useSelector((state) => state.events);
+
+  // console.log("Pagination", pagination);
+
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {

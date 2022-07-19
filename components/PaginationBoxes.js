@@ -1,6 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 function PaginationBoxes({ currentPage = 1, setCurrentPage = undefined }) {
+  const { pagination } = useSelector((state) => state.events);
+
+  console.log(pagination);
+
   return (
     <div className="flex flex-col sm:flex-row items-center justify-center pb-10">
       <div>
