@@ -6,11 +6,15 @@ export default class EventController {
 
   async getAllEvents(req, res) {
     await mongooseService.init();
-    const { page = 1, limit = 2 } = req.query;
+    let { page = 1, limit = 2 } = req.query;
+
+    page = parseInt(page);
+    limit = parseInt(limit);
 
     try {
       const events = await mongooseService.EventDAL.getAllEvents(page, limit);
-      const count = await mongooseService.EventDAL.getDocumentCount();
+      let count = await mongooseService.EventDAL.getDocumentCount();
+      count = parseInt(count);
       res.statusCode = 200;
       res.json({
         events,
