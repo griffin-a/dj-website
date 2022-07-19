@@ -4,13 +4,21 @@ import useSWR from "swr";
 import PaginationBoxes from "../../components/PaginationBoxes";
 import { eventsFetcher } from "../../utils/api";
 
+const fetcher = (url) => fetch(url).then(res => res.json());
+
 export default function Events({ events = [], paginationData = {} }) {
   const { totalPages, currentPage } = paginationData;
   const [page, setPage] = useState(currentPage);
 
+  const { data, error } = useSWR(`/api/events?page=${page}`, fetcher)
+
   useEffect(() => {
     console.log("Current page", page);
   }, [page])
+
+  useEffect(() => {
+    console.log("Data", data);
+  }, [data])
 
   const getEventsJSX = () => {
     const output = [];
