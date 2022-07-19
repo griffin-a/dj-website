@@ -6,6 +6,27 @@ import useSWR from "swr";
 import { retrieve, setPagination } from "../../store/eventsSlice";
 import PaginationBoxes from "../../components/PaginationBoxes";
 
+const eventsFetcher = async () => {
+  const res = await fetch("http://localhost:3000/api/events");
+  const data = await res.json();
+  const container = {};
+
+  for (const [key, value] of Object.entries(data.events)) {
+    const { _id, title, description, paid, hosts, photos } = value;
+
+    container[_id] = {
+      title,
+      description,
+    };
+  }
+
+  const paginationData = {
+    ...data.pagination
+  }
+
+  return [container, paginationData];
+}
+
 export default function Events() {
   const { events } = useSelector((state) => state.events);
 
@@ -17,7 +38,7 @@ export default function Events() {
     console.log(currentPage);
   }, [currentPage]);
 
-  const getEvents = () => {
+  const getEventsJSX = () => {
     const output = [];
 
     for (const [key, value] of Object.entries(events)) {
@@ -45,7 +66,7 @@ export default function Events() {
         </div>
         <section className="bg-gray-100">
           <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
-            {events && <>{getEvents()}</>}
+            {events && <>{getEventsJSX()}</>}
           </div>
 
           <PaginationBoxes />
@@ -57,22 +78,25 @@ export default function Events() {
 
 export const getServerSideProps = wrapper.getServerSideProps(
   (store) => async () => {
-    const res = await fetch("http://localhost:3000/api/events");
-    const data = await res.json();
-    const container = {};
+    // const res = await fetch("http://localhost:3000/api/events");
+    // const data = await res.json();
+    // const container = {};
 
-    for (const [key, value] of Object.entries(data.events)) {
-      const { _id, title, description, paid, hosts, photos } = value;
+    // for (const [key, value] of Object.entries(data.events)) {
+    //   const { _id, title, description, paid, hosts, photos } = value;
 
-      container[_id] = {
-        title,
-        description,
-      };
-    }
+    //   container[_id] = {
+    //     title,
+    //     description,
+    //   };
+    // }
 
-    const paginationData = {
-      ...data.pagination
-    }
+    // const paginationData = {
+    //   ...data.pagination
+    // }
+
+    const [container, paginationData] = await eventsFetcher();
+    
 
     store.dispatch(retrieve(container));
     store.dispatch(setPagination(paginationData));
