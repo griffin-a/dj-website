@@ -24,8 +24,12 @@ class EventDAL {
     const skip = (page - 1) * limit;
     let events;
 
+    // console.log("Page", page);
+    // console.log("Skip", skip);
+    // console.log("Limit", limit);
+
     try {
-      events = await Event.find({}).skip(skip).limit(limit).exec();
+      events = await Event.find().skip(skip).limit(limit).exec();
     } catch (error) {
       throw error;
     }
