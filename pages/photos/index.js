@@ -1,8 +1,8 @@
 import PaginationBoxes from "../../components/PaginationBoxes";
 import EventCardCTA from "../../components/EventCardCTA";
-// import { useSelector } from "react-redux";
+import { eventsFetcher } from "../../utils/api";
 
-export default function Photos({ events = [] }) {
+export default function Photos({ events = [], paginationData = {} }) {
   // const { events } = useSelector((state) => state.events);
 
   const getEvents = () => {
@@ -48,7 +48,7 @@ export default function Photos({ events = [] }) {
               )}
             </div>
 
-            <PaginationBoxes />
+            <PaginationBoxes paginationData={paginationData}/>
           </div>
         </section>
       </section>
@@ -56,26 +56,11 @@ export default function Photos({ events = [] }) {
   );
 }
 
-// export const getServerSideProps = wrapper.getServerSideProps(
-//   (store) => async () => {
-//     const res = await fetch("http://localhost:3000/api/events");
-//     const data = await res.json();
-//     const container = {};
+export const getServerSideProps = async () => {
+  const [events, paginationData] = await eventsFetcher();
 
-//     for (const [key, value] of Object.entries(data.events)) {
-//       const { _id, title, description, paid, hosts, photos } = value;
+  return {
+    props: { events, paginationData }
+  };
+}
 
-//       container[_id] = {
-//         title,
-//         description,
-//       };
-//     }
-
-//     const paginationData = {
-//       ...data.pagination
-//     }
-
-//     store.dispatch(retrieve(container));
-//     store.dispatch(setPagination(paginationData));
-//   }
-// );

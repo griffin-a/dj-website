@@ -4,7 +4,7 @@ import useSWR from "swr";
 import PaginationBoxes from "../../components/PaginationBoxes";
 import { eventsFetcher } from "../../utils/api";
 
-export default function Events({ events = [] }) {
+export default function Events({ events = [], paginationData = {} }) {
   const getEventsJSX = () => {
     const output = [];
 
@@ -36,19 +36,17 @@ export default function Events({ events = [] }) {
             {events && <>{getEventsJSX()}</>}
           </div>
 
-          <PaginationBoxes />
+          <PaginationBoxes paginationData={paginationData} />
         </section>
       </section>
     </div>
   );
 }
 
-// export const getServerSideProps = wrapper.getServerSideProps(
-//   (store) => async () => {
-//     const [container, paginationData] = await eventsFetcher();
-    
+export const getServerSideProps = async () => {
+  const [events, paginationData] = await eventsFetcher();
 
-//     store.dispatch(retrieve(container));
-//     store.dispatch(setPagination(paginationData));
-//   }
-// );
+  return {
+    props: { events, paginationData }
+  };
+}

@@ -3,28 +3,17 @@ import { eventsFetcher } from "../utils/api";
 import { useEffect } from "react";
 
 
-function PaginationBoxes() {
-  // const { pagination } = useSelector((state) => state.events);
-  // const dispatch = useDispatch();
+function PaginationBoxes(props) {
+  const { currentPage, totalPages } = props.paginationData;
 
-  const setNewPage = (increment) => {
-
-    // const newPagination = {
-    //   totalPages: pagination.totalPages,
-    //   currentPage: pagination.currentPage + increment
-    // }
-
-    // // console.log(newPagination);
-
-    // dispatch(setPagination(newPagination));
-  }
-
+  useEffect(() => {
+    console.log(currentPage);
+  }, [])
 
   const getPaginationBoxes = () => {
-    console.log(pagination);
     const output = [];
 
-    for (let i = 0; i < pagination.totalPages; i++) {
+    for (let i = 0; i < totalPages; i++) {
       output.push(
         <a
           href="#"
@@ -45,7 +34,7 @@ function PaginationBoxes() {
       {/* {pagination.currentPage !== 1 && ( */}
         <div>
           <a
-            onClick={() => setNewPage(-1)}
+            onClick={() => currentPage--}
             href="#"
             className="no-underline w-20 h-12 mx-2 my-2 sm:my-0 flex justify-center items-center border border-gray-300 rounded-sm transition-colors duration-200 ease hover:border-gray-400 hover:text-blue-400"
           >
@@ -93,7 +82,7 @@ function PaginationBoxes() {
 
         <a
           href="#"
-          onClick={() => setNewPage(1)}
+          onClick={() => currentPage++}
           className="no-underline w-20 h-12 mx-2 my-2 sm:my-0 flex justify-center items-center border border-gray-300 rounded-sm transition-colors duration-200 ease hover:border-gray-400 hover:text-blue-400"
         >
           Next
