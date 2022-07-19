@@ -1,42 +1,27 @@
 import EventCard from "../../components/EventCard";
 import { wrapper } from "../../store/store";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import useSWR from "swr";
 import { retrieve, setPagination } from "../../store/eventsSlice";
 import PaginationBoxes from "../../components/PaginationBoxes";
-
-const eventsFetcher = async () => {
-  const res = await fetch("http://localhost:3000/api/events");
-  const data = await res.json();
-  const container = {};
-
-  for (const [key, value] of Object.entries(data.events)) {
-    const { _id, title, description, paid, hosts, photos } = value;
-
-    container[_id] = {
-      title,
-      description,
-    };
-  }
-
-  const paginationData = {
-    ...data.pagination
-  }
-
-  return [container, paginationData];
-}
+import { eventsFetcher } from "../../utils/api";
 
 export default function Events() {
   const { events } = useSelector((state) => state.events);
-
-  // console.log("Pagination", pagination);
-
-  const [currentPage, setCurrentPage] = useState(1);
+  const { pagination } = useSelector((state) => state.events);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log(currentPage);
-  }, [currentPage]);
+    const getNextPage = async () => {
+      const [container, paginationData] = await eventsFetcher(pagination.currentPage);
+      dispatch(retrieve(container));
+      dispatch(setPagination(paginationData));
+    }
+
+    getNextPage();
+
+  }, [pagination.currentPage])
 
   const getEventsJSX = () => {
     const output = [];
@@ -78,23 +63,6 @@ export default function Events() {
 
 export const getServerSideProps = wrapper.getServerSideProps(
   (store) => async () => {
-    // const res = await fetch("http://localhost:3000/api/events");
-    // const data = await res.json();
-    // const container = {};
-
-    // for (const [key, value] of Object.entries(data.events)) {
-    //   const { _id, title, description, paid, hosts, photos } = value;
-
-    //   container[_id] = {
-    //     title,
-    //     description,
-    //   };
-    // }
-
-    // const paginationData = {
-    //   ...data.pagination
-    // }
-
     const [container, paginationData] = await eventsFetcher();
     
 

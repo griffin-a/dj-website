@@ -1,8 +1,26 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { eventsFetcher } from "../utils/api";
+import { retrieve, setPagination } from "../store/eventsSlice";
+import { useEffect } from "react";
 
-function PaginationBoxes({ currentPage = 1, setCurrentPage = undefined }) {
+
+function PaginationBoxes() {
   const { pagination } = useSelector((state) => state.events);
+  const dispatch = useDispatch();
+
+  const setNewPage = (increment) => {
+
+    const newPagination = {
+      totalPages: pagination.totalPages,
+      currentPage: pagination.currentPage + increment
+    }
+
+    // console.log(newPagination);
+
+    dispatch(setPagination(newPagination));
+  }
+
 
   const getPaginationBoxes = () => {
     console.log(pagination);
@@ -25,14 +43,18 @@ function PaginationBoxes({ currentPage = 1, setCurrentPage = undefined }) {
 
   return (
     <div className="flex flex-col sm:flex-row items-center justify-center pb-10">
-      <div>
-        <a
-          href="#"
-          className="no-underline w-20 h-12 mx-2 my-2 sm:my-0 flex justify-center items-center border border-gray-300 rounded-sm transition-colors duration-200 ease hover:border-gray-400 hover:text-blue-400"
-        >
-          Prev
-        </a>
-      </div>
+
+      {pagination.currentPage !== 1 && (
+        <div>
+          <a
+            onClick={() => setNewPage(-1)}
+            href="#"
+            className="no-underline w-20 h-12 mx-2 my-2 sm:my-0 flex justify-center items-center border border-gray-300 rounded-sm transition-colors duration-200 ease hover:border-gray-400 hover:text-blue-400"
+          >
+            Prev
+          </a>
+        </div>
+      )}
 
       <div className="flex-1 flex flex-wrap item-center justify-center">
         {/* <a
@@ -67,15 +89,20 @@ function PaginationBoxes({ currentPage = 1, setCurrentPage = undefined }) {
           5
         </a> */}
       </div>
+      {pagination.currentPage !== pagination.totalPages && (
 
       <div>
+
         <a
           href="#"
+          onClick={() => setNewPage(1)}
           className="no-underline w-20 h-12 mx-2 my-2 sm:my-0 flex justify-center items-center border border-gray-300 rounded-sm transition-colors duration-200 ease hover:border-gray-400 hover:text-blue-400"
         >
           Next
         </a>
       </div>
+            )}
+
     </div>
   );
 }
