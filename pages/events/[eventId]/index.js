@@ -6,28 +6,28 @@ import { setCurrentEvent } from "../../../store/eventsSlice";
 import { useEffect } from "react";
 
 export default function EventId() {
-  const { currentEvent } = useSelector((state) => state.events);
-  const dispatch = useDispatch();
+  // const { currentEvent } = useSelector((state) => state.events);
+  // const dispatch = useDispatch();
   const router = useRouter();
   const { isReady } = router;
   const { eventId } = router.query;
 
-  useEffect(() => {
-    if (!currentEvent) {
-      if (!isReady) {
-        return;
-      }
+  // useEffect(() => {
+  //   if (!currentEvent) {
+  //     if (!isReady) {
+  //       return;
+  //     }
 
-      const getEvent = async () => {
-        const res = await fetch(`http://localhost:3000/api/events/${eventId}`);
-        const event = await res.json();
+  //     const getEvent = async () => {
+  //       const res = await fetch(`http://localhost:3000/api/events/${eventId}`);
+  //       const event = await res.json();
 
-        dispatch(setCurrentEvent(event));
-      };
+  //       dispatch(setCurrentEvent(event));
+  //     };
 
-      getEvent();
-    }
-  }, [eventId]);
+  //     getEvent();
+  //   }
+  // }, [eventId]);
 
   return (
     <div>

@@ -1,12 +1,11 @@
 import "../styles/globals.css";
 import Footer from "../components/Footer";
-import { wrapper } from "../store/store";
 import ClassicNav from "../components/headers/ClassicNav";
 import Head from "next/head";
 import { config, dom } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
   return (
     <div>
       <Head>
@@ -19,4 +18,3 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default wrapper.withRedux(MyApp);

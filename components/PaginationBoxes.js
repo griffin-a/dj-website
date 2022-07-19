@@ -1,24 +1,22 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
 import { eventsFetcher } from "../utils/api";
-import { retrieve, setPagination } from "../store/eventsSlice";
 import { useEffect } from "react";
 
 
 function PaginationBoxes() {
-  const { pagination } = useSelector((state) => state.events);
-  const dispatch = useDispatch();
+  // const { pagination } = useSelector((state) => state.events);
+  // const dispatch = useDispatch();
 
   const setNewPage = (increment) => {
 
-    const newPagination = {
-      totalPages: pagination.totalPages,
-      currentPage: pagination.currentPage + increment
-    }
+    // const newPagination = {
+    //   totalPages: pagination.totalPages,
+    //   currentPage: pagination.currentPage + increment
+    // }
 
-    // console.log(newPagination);
+    // // console.log(newPagination);
 
-    dispatch(setPagination(newPagination));
+    // dispatch(setPagination(newPagination));
   }
 
 
@@ -44,7 +42,7 @@ function PaginationBoxes() {
   return (
     <div className="flex flex-col sm:flex-row items-center justify-center pb-10">
 
-      {pagination.currentPage !== 1 && (
+      {/* {pagination.currentPage !== 1 && ( */}
         <div>
           <a
             onClick={() => setNewPage(-1)}
@@ -54,17 +52,17 @@ function PaginationBoxes() {
             Prev
           </a>
         </div>
-      )}
+      {/* )} */}
 
       <div className="flex-1 flex flex-wrap item-center justify-center">
-        {/* <a
+        <a
           href="#"
           className="no-underline w-10 h-12 mx-2 my-2 sm:my-0 flex justify-center items-center border border-gray-300 rounded-sm transition-colors duration-200 ease hover:border-gray-400 hover:text-blue-400"
         >
           1
-        </a> */}
-        {getPaginationBoxes()}
-        {/* <a
+        </a>
+        {/* {getPaginationBoxes()} */}
+        <a
           href="#"
           className="no-underline w-10 h-12 mx-2 my-2 sm:my-0 flex justify-center items-center border border-gray-600 rounded-sm transition-colors duration-200 ease font-medium"
         >
@@ -87,9 +85,9 @@ function PaginationBoxes() {
           className="no-underline w-10 h-12 mx-2 my-2 sm:my-0 flex justify-center items-center border border-gray-300 rounded-sm transition-colors duration-200 ease hover:border-gray-400 hover:text-blue-400"
         >
           5
-        </a> */}
+        </a>
       </div>
-      {pagination.currentPage !== pagination.totalPages && (
+      {/* {pagination.currentPage !== pagination.totalPages && ( */}
 
       <div>
 
@@ -101,7 +99,7 @@ function PaginationBoxes() {
           Next
         </a>
       </div>
-            )}
+            {/* )} */}
 
     </div>
   );

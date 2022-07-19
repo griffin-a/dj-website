@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
-import { setCurrentEvent } from "../store/eventsSlice";
 
 export default function EventCardCTA({
   eventId = undefined,
@@ -10,12 +9,10 @@ export default function EventCardCTA({
   imageUri = "/images/party-1.jpg",
   backgroundColor = "bg-red-700",
 }) {
-  const dispatch = useDispatch();
-  const { events } = useSelector((state) => state.events);
 
   return (
     <Link href={`/events/${eventId}/photos`}>
-      <a onClick={() => dispatch(setCurrentEvent(events[eventId]))} className="relative flex items-end w-full bg-black h-96 group">
+      <a onClick={() => console.log("Event clicked")} className="relative flex items-end w-full bg-black h-96 group">
         <Image
           alt={title}
           src={imageUri}

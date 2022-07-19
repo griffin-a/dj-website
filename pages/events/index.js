@@ -1,28 +1,10 @@
 import EventCard from "../../components/EventCard";
-import { wrapper } from "../../store/store";
-import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import useSWR from "swr";
-import { retrieve, setPagination } from "../../store/eventsSlice";
 import PaginationBoxes from "../../components/PaginationBoxes";
 import { eventsFetcher } from "../../utils/api";
 
-export default function Events() {
-  const { events } = useSelector((state) => state.events);
-  const { pagination } = useSelector((state) => state.events);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    const getNextPage = async () => {
-      const [container, paginationData] = await eventsFetcher(pagination.currentPage);
-      dispatch(retrieve(container));
-      dispatch(setPagination(paginationData));
-    }
-
-    getNextPage();
-
-  }, [pagination.currentPage])
-
+export default function Events({ events = [] }) {
   const getEventsJSX = () => {
     const output = [];
 
@@ -61,12 +43,12 @@ export default function Events() {
   );
 }
 
-export const getServerSideProps = wrapper.getServerSideProps(
-  (store) => async () => {
-    const [container, paginationData] = await eventsFetcher();
+// export const getServerSideProps = wrapper.getServerSideProps(
+//   (store) => async () => {
+//     const [container, paginationData] = await eventsFetcher();
     
 
-    store.dispatch(retrieve(container));
-    store.dispatch(setPagination(paginationData));
-  }
-);
+//     store.dispatch(retrieve(container));
+//     store.dispatch(setPagination(paginationData));
+//   }
+// );

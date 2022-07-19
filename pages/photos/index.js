@@ -1,11 +1,9 @@
 import PaginationBoxes from "../../components/PaginationBoxes";
 import EventCardCTA from "../../components/EventCardCTA";
-import { wrapper } from "../../store/store";
-import { useSelector } from "react-redux";
-import { retrieve, setPagination } from "../../store/eventsSlice";
+// import { useSelector } from "react-redux";
 
-export default function Photos() {
-  const { events } = useSelector((state) => state.events);
+export default function Photos({ events = [] }) {
+  // const { events } = useSelector((state) => state.events);
 
   const getEvents = () => {
     const output = [];
@@ -58,26 +56,26 @@ export default function Photos() {
   );
 }
 
-export const getServerSideProps = wrapper.getServerSideProps(
-  (store) => async () => {
-    const res = await fetch("http://localhost:3000/api/events");
-    const data = await res.json();
-    const container = {};
+// export const getServerSideProps = wrapper.getServerSideProps(
+//   (store) => async () => {
+//     const res = await fetch("http://localhost:3000/api/events");
+//     const data = await res.json();
+//     const container = {};
 
-    for (const [key, value] of Object.entries(data.events)) {
-      const { _id, title, description, paid, hosts, photos } = value;
+//     for (const [key, value] of Object.entries(data.events)) {
+//       const { _id, title, description, paid, hosts, photos } = value;
 
-      container[_id] = {
-        title,
-        description,
-      };
-    }
+//       container[_id] = {
+//         title,
+//         description,
+//       };
+//     }
 
-    const paginationData = {
-      ...data.pagination
-    }
+//     const paginationData = {
+//       ...data.pagination
+//     }
 
-    store.dispatch(retrieve(container));
-    store.dispatch(setPagination(paginationData));
-  }
-);
+//     store.dispatch(retrieve(container));
+//     store.dispatch(setPagination(paginationData));
+//   }
+// );
