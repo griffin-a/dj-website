@@ -5,6 +5,13 @@ import PaginationBoxes from "../../components/PaginationBoxes";
 import { eventsFetcher } from "../../utils/api";
 
 export default function Events({ events = [], paginationData = {} }) {
+  const { totalPages, currentPage } = paginationData;
+  const [page, setPage] = useState(currentPage);
+
+  useEffect(() => {
+    console.log("Current page", page);
+  }, [page])
+
   const getEventsJSX = () => {
     const output = [];
 
@@ -36,7 +43,7 @@ export default function Events({ events = [], paginationData = {} }) {
             {events && <>{getEventsJSX()}</>}
           </div>
 
-          <PaginationBoxes paginationData={paginationData} />
+          <PaginationBoxes totalPages={totalPages} page={page} setPage={setPage} />
         </section>
       </section>
     </div>

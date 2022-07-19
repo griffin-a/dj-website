@@ -1,9 +1,15 @@
 import PaginationBoxes from "../../components/PaginationBoxes";
 import EventCardCTA from "../../components/EventCardCTA";
 import { eventsFetcher } from "../../utils/api";
+import { useState, useEffect } from "react";
 
 export default function Photos({ events = [], paginationData = {} }) {
-  // const { events } = useSelector((state) => state.events);
+  const { totalPages, currentPage } = paginationData;
+  const [page, setPage] = useState(currentPage);
+
+  useEffect(() => {
+    console.log("Current page", page);
+  }, [page])
 
   const getEvents = () => {
     const output = [];
@@ -48,7 +54,7 @@ export default function Photos({ events = [], paginationData = {} }) {
               )}
             </div>
 
-            <PaginationBoxes paginationData={paginationData}/>
+            <PaginationBoxes totalPages={totalPages} page={page} setPage={setPage} />
           </div>
         </section>
       </section>
