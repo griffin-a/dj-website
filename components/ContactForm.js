@@ -1,4 +1,16 @@
+import { useState, useEffect } from "react";
+
+const BOOKING = 1;
+const QUOTE = 2;
+const OTHER = 3;
+
 export default function ContactForm() {
+  const [selectedSubject, setSelectedSubject] = useState(BOOKING);
+  
+  useEffect(() => {
+    console.log(selectedSubject);
+  }, [selectedSubject]);
+
   return (
     <div>
       <section className="bg-gray-100">
@@ -6,7 +18,8 @@ export default function ContactForm() {
           <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
             <div className="lg:py-12 lg:col-span-2">
               <p className="max-w-xl text-lg">
-                Please don't hesitate to get in touch with us for any general inquiries or questions!
+                Please don't hesitate to get in touch with us for any general
+                inquiries or questions!
               </p>
 
               <div className="mt-8">
@@ -22,7 +35,7 @@ export default function ContactForm() {
             </div>
 
             <div className="p-8 bg-white rounded-lg shadow-lg lg:p-12 lg:col-span-3">
-              <form action="" className="space-y-4">
+              <form method="POST" action="/api/form" className="space-y-4">
                 <div>
                   <label className="sr-only" htmlFor="name">
                     Name
@@ -32,6 +45,8 @@ export default function ContactForm() {
                     placeholder="Name"
                     type="text"
                     id="name"
+                    name="name"
+                    required
                   />
                 </div>
 
@@ -45,6 +60,8 @@ export default function ContactForm() {
                       placeholder="Email address"
                       type="email"
                       id="email"
+                      name="email"
+                      required
                     />
                   </div>
 
@@ -57,6 +74,8 @@ export default function ContactForm() {
                       placeholder="Phone Number"
                       type="tel"
                       id="phone"
+                      name="phone"
+                      required
                     />
                   </div>
                 </div>
@@ -69,13 +88,21 @@ export default function ContactForm() {
                       type="radio"
                       tabIndex="-1"
                     />
-                    <label
+                    <button
                       htmlFor="option1"
-                      className="block w-full p-3 border border-gray-200 rounded-lg"
+                      className={`block w-full p-3 border rounded-lg ${
+                        selectedSubject === BOOKING
+                          ? "border-gray-800"
+                          : "border-gray-200"
+                      }`}
                       tabIndex="0"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setSelectedSubject(BOOKING);
+                      }}
                     >
                       <span className="text-sm font-medium"> Booking </span>
-                    </label>
+                    </button>
                   </div>
 
                   <div>
@@ -85,13 +112,21 @@ export default function ContactForm() {
                       type="radio"
                       tabIndex="-1"
                     />
-                    <label
+                    <button
                       htmlFor="option2"
-                      className="block w-full p-3 border border-gray-200 rounded-lg"
+                      className={`block w-full p-3 border rounded-lg ${
+                        selectedSubject === QUOTE
+                          ? "border-gray-800"
+                          : "border-gray-200"
+                      }`}
                       tabIndex="0"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setSelectedSubject(QUOTE);
+                      }}
                     >
                       <span className="text-sm font-medium"> Quote </span>
-                    </label>
+                    </button>
                   </div>
 
                   <div>
@@ -101,16 +136,38 @@ export default function ContactForm() {
                       type="radio"
                       tabIndex="-1"
                     />
-                    <label
+                    <button
                       htmlFor="option3"
-                      className="block w-full p-3 border border-gray-200 rounded-lg"
+                      className={`block w-full p-3 border rounded-lg ${
+                        selectedSubject === OTHER
+                          ? "border-gray-800"
+                          : "border-gray-200"
+                      }`}
                       tabIndex="0"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setSelectedSubject(OTHER);
+                      }}
                     >
                       <span className="text-sm font-medium"> Other </span>
-                    </label>
+                    </button>
                   </div>
                 </div>
 
+                {selectedSubject === OTHER && (
+                  <div>
+                    <label className="sr-only" htmlFor="subject">
+                      Subject
+                    </label>
+                    <input
+                      className="w-full p-3 text-sm border-gray-200 rounded-lg"
+                      placeholder="Subject"
+                      type="text"
+                      id="subject"
+                      name="subject"
+                    />
+                  </div>
+                )}
                 <div>
                   <label className="sr-only" htmlFor="message">
                     Message
@@ -120,6 +177,8 @@ export default function ContactForm() {
                     placeholder="Message"
                     rows="8"
                     id="message"
+                    name="message"
+                    required
                   ></textarea>
                 </div>
 

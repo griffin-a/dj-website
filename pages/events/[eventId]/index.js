@@ -1,8 +1,8 @@
 import CTASideImages from "../../../components/CTASideImages";
 import ReviewsGrid from "../../../components/ReviewsGrid";
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
-import { setCurrentEvent } from "../../../store/eventsSlice";
+// import { setCurrentEvent } from "../../../store/eventsSlice";
 import { useEffect } from "react";
 
 export default function EventId() {

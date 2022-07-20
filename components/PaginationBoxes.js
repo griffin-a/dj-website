@@ -24,8 +24,9 @@ function PaginationBoxes({ totalPages, page, setPage }) {
 
   return (
     <div className="flex flex-col sm:flex-row items-center justify-center pb-10">
-      {page !== 1 && (
+      
         <div>
+        {page !== 1 && (
           <a
             onClick={() => setPage(page - 1)}
             href="#"
@@ -33,8 +34,9 @@ function PaginationBoxes({ totalPages, page, setPage }) {
           >
             Prev
           </a>
+          )}
         </div>
-      )}
+      
 
       <div className="flex-1 flex flex-wrap item-center justify-center">
         {/* <a
@@ -69,8 +71,9 @@ function PaginationBoxes({ totalPages, page, setPage }) {
           5
         </a> */}
       </div>
-      {page !== totalPages && (
+      
         <div>
+        {page !== totalPages && (
           <a
             href="#"
             onClick={() => setPage(page + 1)}
@@ -78,8 +81,9 @@ function PaginationBoxes({ totalPages, page, setPage }) {
           >
             Next
           </a>
+          )}
         </div>
-      )}
+      
     </div>
   );
 }

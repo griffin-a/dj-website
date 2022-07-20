@@ -11,7 +11,7 @@ export default function TopFilters() {
     console.log("Called");
     console.log(selectedFilter);
     // console.log(filters);
-    setFilters([selectedFilter]);
+    setFilters([...filters, selectedFilter]);
   };
 
   useEffect(() => {}, [filters]);
