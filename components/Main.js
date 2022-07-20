@@ -134,19 +134,24 @@ export default function Main() {
               Enter your email address to get notified about any upcoming events
               and updates!
             </h1>
-            <input
-              type="email"
-              placeholder="jack@example.com"
-              name="email"
-              autoComplete="email"
-              className="border border-gray-600 w-1/4 pr-2 pl-2 py-3 mt-2 rounded-md text-gray-800 font-semibold hover:border-gray-700 bg-black"
-            />{" "}
-            <a
-              className="inline-flex items-center px-14 py-3 mt-2 ml-2 font-medium text-black transition duration-500 ease-in-out transform bg-transparent border rounded-lg bg-white"
-              href="/"
-            >
-              <span className="justify-center">Subscribe</span>
-            </a>
+
+            <form method="POST" action="/api/subscribe">
+              <input
+                type="email"
+                htmlFor="email"
+                placeholder="jack@example.com"
+                name="email"
+                autoComplete="email"
+                required
+                className="border border-gray-600 w-1/4 pr-2 pl-2 py-3 mt-2 rounded-md text-white font-semibold hover:border-gray-700 bg-black"
+              />{" "}
+              <button
+                className="inline-flex items-center px-14 py-3 mt-2 ml-2 font-medium text-black transition duration-500 ease-in-out transform bg-transparent border rounded-lg bg-white"
+                type="submit"
+              >
+                  <span className="justify-center">Subscribe</span>
+              </button>
+            </form>
           </div>
         </div>
       </section>

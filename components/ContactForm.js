@@ -6,7 +6,7 @@ const OTHER = 3;
 
 export default function ContactForm() {
   const [selectedSubject, setSelectedSubject] = useState(BOOKING);
-  
+
   useEffect(() => {
     console.log(selectedSubject);
   }, [selectedSubject]);
@@ -80,8 +80,8 @@ export default function ContactForm() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
-                  <div>
+                {/* <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3"> */}
+                {/* <div>
                     <input
                       className="sr-only"
                       id="option1"
@@ -103,9 +103,9 @@ export default function ContactForm() {
                     >
                       <span className="text-sm font-medium"> Booking </span>
                     </button>
-                  </div>
+                  </div> */}
 
-                  <div>
+                {/* <div>
                     <input
                       className="sr-only"
                       id="option2"
@@ -127,9 +127,9 @@ export default function ContactForm() {
                     >
                       <span className="text-sm font-medium"> Quote </span>
                     </button>
-                  </div>
+                  </div> */}
 
-                  <div>
+                {/* <div>
                     <input
                       className="sr-only"
                       id="option3"
@@ -152,22 +152,20 @@ export default function ContactForm() {
                       <span className="text-sm font-medium"> Other </span>
                     </button>
                   </div>
-                </div>
+                </div> */}
 
-                {selectedSubject === OTHER && (
-                  <div>
-                    <label className="sr-only" htmlFor="subject">
-                      Subject
-                    </label>
-                    <input
-                      className="w-full p-3 text-sm border-gray-200 rounded-lg"
-                      placeholder="Subject"
-                      type="text"
-                      id="subject"
-                      name="subject"
-                    />
-                  </div>
-                )}
+                <div>
+                  <label className="sr-only" htmlFor="subject">
+                    Subject
+                  </label>
+                  <input
+                    className="w-full p-3 text-sm border-gray-200 rounded-lg"
+                    placeholder="Subject"
+                    type="text"
+                    id="subject"
+                    name="subject"
+                  />
+                </div>
                 <div>
                   <label className="sr-only" htmlFor="message">
                     Message
