@@ -1,15 +1,38 @@
 import { useState, useEffect } from "react";
 
-const BOOKING = 1;
-const QUOTE = 2;
-const OTHER = 3;
-
 export default function ContactForm() {
-  const [selectedSubject, setSelectedSubject] = useState(BOOKING);
+  const [formData, setFormData] = useState({ name: "", email: "", subject: "", phone: "", message: "" });
+
+  const handleFormChange = event => {
+    const eventTargetName = event.target.name;
+    const eventValue = event.target.value;
+
+    setFormData({ ...formData, [eventTargetName]: eventValue });
+  }
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        contentType: "application/json",
+        body: JSON.stringify(formData)
+      });
+
+      if (response.status !== 200) {
+        throw new Error(`Request failed: ${response.status}`); 
+      }
+
+      setFormData({ name: "", email: "", subject: "", phone: "", message: "" });
+    } catch (error) {
+      alert("There was an error submitting your form!");
+    }
+  }
 
   useEffect(() => {
-    console.log(selectedSubject);
-  }, [selectedSubject]);
+    console.log(formData);
+  }, [formData]);
 
   return (
     <div>
@@ -35,17 +58,19 @@ export default function ContactForm() {
             </div>
 
             <div className="p-8 bg-white rounded-lg shadow-lg lg:p-12 lg:col-span-3">
-              <form method="POST" action="/api/form" className="space-y-4">
+              <form onSubmit={handleFormSubmit} className="space-y-4">
                 <div>
                   <label className="sr-only" htmlFor="name">
                     Name
                   </label>
                   <input
+                    onChange={e => handleFormChange(e)}
                     className="w-full p-3 text-sm border-gray-200 rounded-lg"
                     placeholder="Name"
                     type="text"
                     id="name"
                     name="name"
+                    value={formData.name}
                     required
                   />
                 </div>
@@ -56,11 +81,13 @@ export default function ContactForm() {
                       Email
                     </label>
                     <input
+                      onChange={e => handleFormChange(e)}
                       className="w-full p-3 text-sm border-gray-200 rounded-lg"
                       placeholder="Email address"
                       type="email"
                       id="email"
                       name="email"
+                      value={formData.email}
                       required
                     />
                   </div>
@@ -70,100 +97,31 @@ export default function ContactForm() {
                       Phone
                     </label>
                     <input
+                      onChange={e => handleFormChange(e)}
                       className="w-full p-3 text-sm border-gray-200 rounded-lg"
                       placeholder="Phone Number"
                       type="tel"
                       id="phone"
                       name="phone"
+                      value={formData.phone}
                       required
                     />
                   </div>
                 </div>
-
-                {/* <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3"> */}
-                {/* <div>
-                    <input
-                      className="sr-only"
-                      id="option1"
-                      type="radio"
-                      tabIndex="-1"
-                    />
-                    <button
-                      htmlFor="option1"
-                      className={`block w-full p-3 border rounded-lg ${
-                        selectedSubject === BOOKING
-                          ? "border-gray-800"
-                          : "border-gray-200"
-                      }`}
-                      tabIndex="0"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setSelectedSubject(BOOKING);
-                      }}
-                    >
-                      <span className="text-sm font-medium"> Booking </span>
-                    </button>
-                  </div> */}
-
-                {/* <div>
-                    <input
-                      className="sr-only"
-                      id="option2"
-                      type="radio"
-                      tabIndex="-1"
-                    />
-                    <button
-                      htmlFor="option2"
-                      className={`block w-full p-3 border rounded-lg ${
-                        selectedSubject === QUOTE
-                          ? "border-gray-800"
-                          : "border-gray-200"
-                      }`}
-                      tabIndex="0"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setSelectedSubject(QUOTE);
-                      }}
-                    >
-                      <span className="text-sm font-medium"> Quote </span>
-                    </button>
-                  </div> */}
-
-                {/* <div>
-                    <input
-                      className="sr-only"
-                      id="option3"
-                      type="radio"
-                      tabIndex="-1"
-                    />
-                    <button
-                      htmlFor="option3"
-                      className={`block w-full p-3 border rounded-lg ${
-                        selectedSubject === OTHER
-                          ? "border-gray-800"
-                          : "border-gray-200"
-                      }`}
-                      tabIndex="0"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setSelectedSubject(OTHER);
-                      }}
-                    >
-                      <span className="text-sm font-medium"> Other </span>
-                    </button>
-                  </div>
-                </div> */}
 
                 <div>
                   <label className="sr-only" htmlFor="subject">
                     Subject
                   </label>
                   <input
+                    onChange={e => handleFormChange(e)}
                     className="w-full p-3 text-sm border-gray-200 rounded-lg"
                     placeholder="Subject"
                     type="text"
                     id="subject"
                     name="subject"
+                    value={formData.subject}
+                    required
                   />
                 </div>
                 <div>
@@ -171,11 +129,13 @@ export default function ContactForm() {
                     Message
                   </label>
                   <textarea
+                    onChange={e => handleFormChange(e)}
                     className="w-full p-3 text-sm border-gray-200 rounded-lg"
                     placeholder="Message"
                     rows="8"
                     id="message"
                     name="message"
+                    value={formData.message}
                     required
                   ></textarea>
                 </div>
@@ -183,6 +143,7 @@ export default function ContactForm() {
                 <div className="mt-4">
                   <button
                     type="submit"
+                    // onSubmit={e => handleFormSubmit(e)}
                     className="inline-flex items-center justify-center w-full px-5 py-3 text-white bg-black rounded-lg sm:w-auto"
                   >
                     <span className="font-medium"> Send Inquiry </span>
