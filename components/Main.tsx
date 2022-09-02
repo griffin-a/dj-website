@@ -138,7 +138,7 @@ export default function Main() {
             <form method="POST" action="/api/subscribe">
               <input
                 type="email"
-                htmlFor="email"
+                // htmlFor="email"
                 placeholder="jack@example.com"
                 name="email"
                 autoComplete="email"

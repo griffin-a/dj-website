@@ -5,7 +5,7 @@ function CheckboxGroup({
   label = "",
   name = "",
   defaultChecked = false,
-  onChange = () => {},
+  onChange = (checked: boolean) => {},
   ...newProps
 }) {
   const finalClass = `${className} appearance-none w-6 h-6 border border-gray-300 rounded-sm outline-none cursor-pointer checked:bg-blue-400`

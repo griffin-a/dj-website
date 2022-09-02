@@ -4,7 +4,7 @@ function SelectGroup({
   className = "",
   name,
   options = [],
-  onChange = () => {},
+  onChange = (newVal: string) => {},
   error = false,
   errorText = "",
   description = "",

@@ -132,7 +132,7 @@ export default function ContactForm() {
                     onChange={e => handleFormChange(e)}
                     className="w-full p-3 text-sm border-gray-200 rounded-lg"
                     placeholder="Message"
-                    rows="8"
+                    // rows="8"
                     id="message"
                     name="message"
                     value={formData.message}

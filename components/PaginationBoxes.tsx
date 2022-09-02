@@ -1,8 +1,14 @@
 import React from "react";
-import { eventsFetcher } from "../utils/api";
-import { useEffect } from "react";
+// import { eventsFetcher } from "../utils/api";
+// import { useEffect } from "react";
 
-function PaginationBoxes({ totalPages, page, setPage }) {
+type PaginationProps = {
+  totalPages?: number,
+  page?: number,
+  setPage?: (page: number) => void
+}
+
+function PaginationBoxes({ totalPages = 1, page = 1, setPage }: PaginationProps) {
   const getPaginationBoxes = () => {
     const output = [];
 
@@ -39,37 +45,7 @@ function PaginationBoxes({ totalPages, page, setPage }) {
       
 
       <div className="flex-1 flex flex-wrap item-center justify-center">
-        {/* <a
-          href="#"
-          className="no-underline w-10 h-12 mx-2 my-2 sm:my-0 flex justify-center items-center border border-gray-300 rounded-sm transition-colors duration-200 ease hover:border-gray-400 hover:text-blue-400"
-        >
-          1
-        </a> */}
         {getPaginationBoxes()}
-        {/* <a
-          href="#"
-          className="no-underline w-10 h-12 mx-2 my-2 sm:my-0 flex justify-center items-center border border-gray-600 rounded-sm transition-colors duration-200 ease font-medium"
-        >
-          2
-        </a>
-        <a
-          href="#"
-          className="no-underline w-10 h-12 mx-2 my-2 sm:my-0 flex justify-center items-center border border-gray-300 rounded-sm transition-colors duration-200 ease hover:border-gray-400 hover:text-blue-400"
-        >
-          3
-        </a>
-        <a
-          href="#"
-          className="no-underline w-10 h-12 mx-2 my-2 sm:my-0 flex justify-center items-center border border-gray-300 rounded-sm transition-colors duration-200 ease hover:border-gray-400 hover:text-blue-400"
-        >
-          4
-        </a>
-        <a
-          href="#"
-          className="no-underline w-10 h-12 mx-2 my-2 sm:my-0 flex justify-center items-center border border-gray-300 rounded-sm transition-colors duration-200 ease hover:border-gray-400 hover:text-blue-400"
-        >
-          5
-        </a> */}
       </div>
       
         <div>

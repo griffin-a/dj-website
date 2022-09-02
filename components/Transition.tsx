@@ -1,8 +1,14 @@
 import React, { useRef, useEffect, useContext } from "react"
 import { CSSTransition as ReactCSSTransition } from "react-transition-group"
 
+type ParentType = {
+  appear: boolean,
+  isInitialRender: boolean,
+  show: boolean
+}
+
 const TransitionContext = React.createContext({
-  parent: {},
+  parent: {} as ParentType
 })
 
 function useIsInitialRender() {

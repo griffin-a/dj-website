@@ -5,9 +5,9 @@ import RadioGroup from "./RadioGroup";
 import SelectGroup from "./SelectGroup";
 
 export default function TopFilters() {
-  const { filters, setFilters } = useState([]);
+  const [filters, setFilters] = useState([]);
 
-  const onSelect = (selectedFilter) => {
+  const onSelect = (selectedFilter): void => {
     console.log("Called");
     console.log(selectedFilter);
     // console.log(filters);
@@ -67,7 +67,7 @@ export default function TopFilters() {
               label="Select tags"
               placeholder="Select..."
               name="tags"
-              onChange={onSelect}
+              // onChange={onSelect}
               options={[
                 {
                   value: "crowd",

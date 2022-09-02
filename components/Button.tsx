@@ -60,7 +60,7 @@ function Button({
         </>
       )
   }
-  let ButtonTag = link ? "a" : "div"
+  let ButtonTag: any = link ? "a" : "div"
   if (submit) ButtonTag = "button"
   return (
     <ButtonTag

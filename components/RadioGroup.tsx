@@ -5,7 +5,7 @@ function RadioGroup({
   label = "",
   name,
   radios = [],
-  onChange = () => {},
+  onChange = (newVal: string) => {},
   error = false,
   errorText = "",
   description = "",
