@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function SkillsPanel({title, description, boxContent }) {
+export default function SkillsPanel({title, description, boxContent = null }) {
   return (
     <section>
       <div className="max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">

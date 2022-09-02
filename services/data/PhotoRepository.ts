@@ -1,10 +1,18 @@
-import { Photo } from "@prisma/client";
+import { Photo, PrismaClient } from "@prisma/client";
 import IPhotoRepository from "./IPhotoRepository";
+
+const prisma = new PrismaClient();
 
 export default class PhotoRepository implements IPhotoRepository {
     async getPhotos(): Promise<Photo[]> {
-        throw new Error("Method not implemented.");
+        try {
+            const photos = await prisma.photo.findMany();
+            return photos;
+        } catch (error) {
+            throw (error);
+        }
     }
+
     async getPhotosByEventId(eventId: string): Promise<Photo[]> {
         throw new Error("Method not implemented.");
     }
