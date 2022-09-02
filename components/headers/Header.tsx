@@ -7,11 +7,11 @@ export default function Header() {
   const [flyerTwo, setFlyerTwo] = React.useState(false);
 
   return (
-    <header class="fixed top-0 w-full clearNav z-50">
-      <div class="max-w-screen-xl mx-auto flex flex-wrap p-5 flex-col md:flex-row">
+    <header className="fixed top-0 w-full clearNav z-50">
+      <div className="max-w-screen-xl mx-auto flex flex-wrap p-5 flex-col md:flex-row">
         <div className="flex flex-row items-center justify-between p-3 md:p-1">
           <Link href="/">
-            <a class="flex text-3xl text-white font-medium mb-4 md:mb-0">
+            <a className="flex text-3xl text-white font-medium mb-4 md:mb-0">
               YEAH G
             </a>
           </Link>
@@ -45,9 +45,9 @@ export default function Header() {
             (navbarOpen ? " flex" : " hidden")
           }
         >
-          <div class="md:ml-auto md:mr-auto font-4 pt-1 md:pl-14 pl-1 flex flex-wrap items-center md:text-base text-1xl md:justify-center justify-items-start">
+          <div className="md:ml-auto md:mr-auto font-4 pt-1 md:pl-14 pl-1 flex flex-wrap items-center md:text-base text-1xl md:justify-center justify-items-start">
             <Link href="/about">
-              <a class="mr-11 pr-2 cursor-pointer text-gray-300 hover:text-white font-semibold tr04">
+              <a className="mr-11 pr-2 cursor-pointer text-gray-300 hover:text-white font-semibold tr04">
                 About
               </a>
             </Link>
@@ -136,17 +136,17 @@ export default function Header() {
               </div>
             </div>
             <Link href="/photos">
-              <a class="mr-12 md:ml-11 ml-0 cursor-pointer text-gray-300 hover:text-white font-semibold tr04">
+              <a className="mr-12 md:ml-11 ml-0 cursor-pointer text-gray-300 hover:text-white font-semibold tr04">
                 Photos
               </a>
             </Link>
             <Link href="/testimonials">
-              <a class="mr-12 cursor-pointer text-gray-300 hover:text-white font-semibold tr04">
+              <a className="mr-12 cursor-pointer text-gray-300 hover:text-white font-semibold tr04">
                 Testimonials
               </a>
             </Link>
             <Link href="/contact">
-              <a class="mr-5 cursor-pointer text-gray-300 hover:text-white font-semibold tr04">
+              <a className="mr-5 cursor-pointer text-gray-300 hover:text-white font-semibold tr04">
                 Contact
               </a>
             </Link>
@@ -158,7 +158,7 @@ export default function Header() {
             className="invisible md:visible"
           >
             <svg
-              title="Twitter"
+              // title="Twitter"
               width="30"
               height="17"
               viewBox="0 0 50 40"
@@ -186,8 +186,8 @@ export default function Header() {
               viewBox="0 0 25 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              title="GitHub logo"
-              class="github-link--logo"
+              // title="GitHub logo"
+              className="github-link--logo"
             >
               <path
                 data-v-54e46119=""

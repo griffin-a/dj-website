@@ -1,14 +1,14 @@
 export default function AltHeader() {
   return (
     <div>
-      <header class="bg-white">
-        <div class="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
-          <div class="flex items-center justify-between h-16">
-            <div class="md:flex md:items-center md:gap-12">
-              <a class="block text-teal-600" href="/">
-                <span class="sr-only">Home</span>
+      <header className="bg-white">
+        <div className="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <div className="md:flex md:items-center md:gap-12">
+              <a className="block text-teal-600" href="/">
+                <span className="sr-only">Home</span>
                 <svg
-                  class="h-8"
+                  className="h-8"
                   viewBox="0 0 28 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -21,16 +21,16 @@ export default function AltHeader() {
               </a>
             </div>
 
-            <div class="hidden md:block">
+            <div className="hidden md:block">
               <nav aria-labelledby="header-navigation">
-                <h2 class="sr-only" id="header-navigation">
+                <h2 className="sr-only" id="header-navigation">
                   Header navigation
                 </h2>
 
-                <ul class="flex items-center gap-6 text-sm">
+                <ul className="flex items-center gap-6 text-sm">
                   <li>
                     <a
-                      class="text-gray-500 transition hover:text-gray-500/75"
+                      className="text-gray-500 transition hover:text-gray-500/75"
                       href="/"
                     >
                       About
@@ -39,7 +39,7 @@ export default function AltHeader() {
 
                   <li>
                     <a
-                      class="text-gray-500 transition hover:text-gray-500/75"
+                      className="text-gray-500 transition hover:text-gray-500/75"
                       href="/"
                     >
                       Careers
@@ -48,7 +48,7 @@ export default function AltHeader() {
 
                   <li>
                     <a
-                      class="text-gray-500 transition hover:text-gray-500/75"
+                      className="text-gray-500 transition hover:text-gray-500/75"
                       href="/"
                     >
                       History
@@ -57,7 +57,7 @@ export default function AltHeader() {
 
                   <li>
                     <a
-                      class="text-gray-500 transition hover:text-gray-500/75"
+                      className="text-gray-500 transition hover:text-gray-500/75"
                       href="/"
                     >
                       Services
@@ -66,7 +66,7 @@ export default function AltHeader() {
 
                   <li>
                     <a
-                      class="text-gray-500 transition hover:text-gray-500/75"
+                      className="text-gray-500 transition hover:text-gray-500/75"
                       href="/"
                     >
                       Projects
@@ -75,7 +75,7 @@ export default function AltHeader() {
 
                   <li>
                     <a
-                      class="text-gray-500 transition hover:text-gray-500/75"
+                      className="text-gray-500 transition hover:text-gray-500/75"
                       href="/"
                     >
                       Blog
@@ -85,18 +85,18 @@ export default function AltHeader() {
               </nav>
             </div>
 
-            <div class="flex items-center gap-4">
-              <div class="sm:gap-4 sm:flex">
+            <div className="flex items-center gap-4">
+              <div className="sm:gap-4 sm:flex">
                 <a
-                  class="px-5 py-2.5 text-sm font-medium text-white bg-teal-600 rounded-md shadow"
+                  className="px-5 py-2.5 text-sm font-medium text-white bg-teal-600 rounded-md shadow"
                   href="/"
                 >
                   Login
                 </a>
 
-                <div class="hidden sm:flex">
+                <div className="hidden sm:flex">
                   <a
-                    class="px-5 py-2.5 text-sm font-medium text-teal-600 bg-gray-100 rounded-md"
+                    className="px-5 py-2.5 text-sm font-medium text-teal-600 bg-gray-100 rounded-md"
                     href="/"
                   >
                     Register
@@ -104,11 +104,11 @@ export default function AltHeader() {
                 </div>
               </div>
 
-              <div class="block md:hidden">
-                <button class="p-2 text-gray-600 transition bg-gray-100 rounded hover:text-gray-600/75">
+              <div className="block md:hidden">
+                <button className="p-2 text-gray-600 transition bg-gray-100 rounded hover:text-gray-600/75">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="w-5 h-5"
+                    className="w-5 h-5"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"

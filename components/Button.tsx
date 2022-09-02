@@ -4,7 +4,7 @@ function Button({
   className = "",
   text = "button",
   size = "base",
-  link,
+  link = null,
   type = "primary",
   icon = null,
   iconPosition = "left",
@@ -43,7 +43,7 @@ function Button({
     finalClass +=
       " text-white bg-gray-900 border-gray-900 hover:bg-black hover:border-black"
   if (full) finalClass += " w-full"
-  let content = text
+  let content: any = text
   if (icon) {
     if (iconPosition === "left")
       content = (

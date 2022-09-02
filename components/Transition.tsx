@@ -81,6 +81,7 @@ function Transition({ show, appear, ...rest }) {
   if (isChild) {
     return (
       <CSSTransition
+        children={null}
         appear={parent.appear || !parent.isInitialRender}
         show={parent.show}
         {...rest}
@@ -98,7 +99,7 @@ function Transition({ show, appear, ...rest }) {
         },
       }}
     >
-      <CSSTransition appear={appear} show={show} {...rest} />
+      <CSSTransition children={null} appear={appear} show={show} {...rest} />
     </TransitionContext.Provider>
   )
 }

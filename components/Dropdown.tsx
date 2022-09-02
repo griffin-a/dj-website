@@ -23,7 +23,7 @@ function Dropdown({
         className="flex items-center px-3 py-3 cursor-pointer hover:bg-gray-200 font-light text-sm focus:outline-none"
         href={o.link}
       >
-        {o.icon ? <div class="mr-2">{o.icon}</div> : null}
+        {o.icon ? <div className="mr-2">{o.icon}</div> : null}
         {o.text}
       </OptionTag>
     )
@@ -41,11 +41,11 @@ function Dropdown({
     else return createOption(o)
   })
   const Banner = header ? (
-    <div class="border-b border-gray-100 px-3 py-3">{header}</div>
+    <div className="border-b border-gray-100 px-3 py-3">{header}</div>
   ) : null
 
   return (
-    <Transition show={show}>
+    <Transition show={show} appear={null}>
       <Transition
         enter="transition duration-200 ease-in-out transform"
         enterFrom="opacity-0 scale-95 -translate-y-2"
@@ -53,6 +53,8 @@ function Dropdown({
         leave="transition duration-200 ease-in-out transform"
         leaveFrom="opacity-100 scale-100 translate-y-0"
         leaveTo="opacity-0 scale-95 -translate-y-2"
+        show={null}
+        appear={null}
       >
         <div className={finalClass} {...newProps}>
           {Banner}

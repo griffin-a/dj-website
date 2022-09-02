@@ -7,7 +7,7 @@ import {
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
-import Button from "../../components/Button";
+import Button from "../Button";
 
 function ClassicNav() {
   const router = useRouter();
