@@ -9,3 +9,47 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+// Event - photos: one to many 
+// Event - hosts: many to many
+model Event {
+  id              String          @id @default(cuid())
+  title           String
+  description     String
+  paid            Boolean?
+  capacity        Int?
+  venue           String?
+  date            DateTime?
+  eventType       String?
+  completed       Boolean?
+  currentlyBooked Boolean?
+  imageUri        String?
+  hosts           Host[]
+  photos          Photo[]
+  HostsOnEvents   HostsOnEvents[]
+}
+
+model Host {
+  id            String          @id @default(cuid())
+  name          String?
+  email         String?
+  events        Event[]
+  HostsOnEvents HostsOnEvents[]
+}
+
+model HostsOnEvents {
+  host    Host   @relation(fields: [hostId], references: [id])
+  hostId  String
+  event   Event  @relation(fields: [eventId], references: [id])
+  eventId String
+
+  @@id([hostId, eventId])
+}
+
+model Photo {
+  id      String  @id @default(cuid())
+  title   String?
+  link    String?
+  event   Event?  @relation(fields: [eventId], references: [id])
+  eventId String?
+}

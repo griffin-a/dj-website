@@ -1,7 +1,7 @@
 import { Schema, model, models } from "mongoose";
 
 const hostSchema = new Schema({
-  namme: {
+  name: {
     type: String,
   },
   email: {
