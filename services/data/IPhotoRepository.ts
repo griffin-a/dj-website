@@ -1,7 +1,7 @@
 import Photo from "../../models/Photo";
 
 export default interface IPhotoRepository {
-    getPhotos(): Photo[],
-    getPhotosByEventId(eventId: string): Photo[],
-    updatePhotoById(photoId: string): boolean
+    getPhotos(): Promise<Photo[]>,
+    getPhotosByEventId(eventId: string): Promise<Photo[]>,
+    updatePhotoById(photoId: string): Promise<boolean>
 }
