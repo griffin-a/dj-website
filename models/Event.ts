@@ -1,52 +1,17 @@
-  import { Schema, model, models } from "mongoose";
+import Host from "./Host";
+import Photo from "./Photo";
 
-const eventSchema = new Schema({
-  title: {
-    type: String,
-    required: true,
-  },
-  description: {
-    type: String,
-    required: true,
-  },
-  paid: {
-    type: Boolean,
-  },
-  hosts: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Host",
-    },
-  ],
-  capacity: {
-    type: Number,
-  },
-  venue: {
-    type: String,
-  },
-  date: {
-    type: Date,
-  },
-  eventType: {
-    type: String,
-  },
-  photos: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Photo",
-    },
-  ],
-  completed: {
-    type: Boolean,
-  },
-  currentlyBooked: {
-    type: Boolean,
-  },
-  imageUri: {
-    type: String,
-  }
-});
-
-const Event = models.Event || model("Event", eventSchema);
-
-export default Event;
+export default class Event {
+  public title: string;
+  public description: string;
+  public paid: boolean;
+  public capacity: number;
+  public venue: string;
+  public date: Date;
+  public eventType: string;
+  public completed: boolean;
+  public currentlyBooked: boolean;
+  public imageUri: string;
+  public hosts: Host[];
+  public photos: Photo[];
+}
