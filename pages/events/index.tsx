@@ -32,7 +32,7 @@ export default function Events({ events = [], paginationData }: EventsProps) {
   }, [page]);
 
   useEffect(() => {
-    cache.set("data", data.events);
+    cache.set("data", data);
   }, [data]);
 
   return (
