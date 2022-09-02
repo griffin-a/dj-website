@@ -4,37 +4,30 @@ import useSWR from "swr";
 import PaginationBoxes from "../../components/PaginationBoxes";
 import { eventsFetcher } from "../../utils/api";
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-export default function Events({ events = [], paginationData = {} }) {
+type PaginationVals = {
+  totalPages: number,
+  currentPage: number
+}
+
+type EventsProps = {
+  events: [],
+  paginationData: PaginationVals
+}
+
+export default function Events({ events = [], paginationData }: EventsProps) {
   const { totalPages, currentPage } = paginationData;
   const [page, setPage] = useState(currentPage);
 
-  const { data, error } = useSWR(`/api/events?page=${page}`, fetcher, {
-    initialData: page === 1 ? { events } : null,
-  });
+  // const { data, error } = useSWR(`/api/events?page=${page}`, fetcher, {
+  //   initialData: page === 1 ? { events } : undefined,
+  // });
+  const { data, error } = useSWR(`/api/events?page=${page}`, fetcher);
 
   useEffect(() => {
     console.log("Current page", page);
   }, [page]);
-
-  const getEventsJSX = () => {
-    const output = [];
-
-    for (const [key, value] of Object.entries(events)) {
-      output.push(
-        <EventCard
-          key={key}
-          eventType="party"
-          title={value.title}
-          description={value.description}
-          eventId={key}
-        />
-      );
-    }
-
-    return output;
-  };
 
   return (
     <div>
@@ -50,11 +43,11 @@ export default function Events({ events = [], paginationData = {} }) {
             {data && data.events.map((event) => {
               return (
                 <EventCard
-                  key={event._id}
+                  key={event.id}
                   eventType="party"
                   title={event.title}
                   description={event.description}
-                  eventId={event._id}
+                  eventId={event.id}
                 />
               );
             })}
