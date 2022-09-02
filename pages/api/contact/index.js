@@ -38,7 +38,12 @@ export default async (req, res) => {
   // in the command line where next.js app is running.
   switch (req.method) {
     case "POST":
+      const body = req.body;
+
+      console.log(body);
       await validateBody(req, res);
+      console.log("Passed validation");
+      console.log(JSON.parse(body));
 
       const errors = validationResult(req);
 
@@ -47,7 +52,6 @@ export default async (req, res) => {
         return res.status(422).json({ errors: errors.array() });
       }
 
-      const body = JSON.parse(req.body);
 
       return res.status(200).json(body);
 

@@ -16,7 +16,7 @@ export default function ContactForm() {
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        contentType: "application/json",
+        // contentType: "application/json",
         body: JSON.stringify(formData)
       });
 
