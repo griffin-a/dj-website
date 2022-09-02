@@ -8,9 +8,9 @@ config.autoAddCss = false;
 export default function MyApp({ Component, pageProps }) {
   return (
     <div>
-      <Head>
+      {/* <Head>
         <style>{dom.css()}</style>
-      </Head>
+      </Head> */}
       <ClassicNav />
       <Component {...pageProps} />;
       <Footer />

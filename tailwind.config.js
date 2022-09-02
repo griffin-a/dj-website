@@ -3,6 +3,8 @@ module.exports = {
     // Example content paths...
     './public/**/*.html',
     './src/**/*.{js,jsx,ts,tsx,vue}',
+    './pages/**/*.{html,js,tsx,ts}',
+    './components/**/*.{html,js,tsx}',
   ],
   theme: {
     extend: {
@@ -25,8 +27,8 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-  content: [
-    './pages/**/*.{html,js}',
-    './components/**/*.{html,js}',
-  ],
+  // content: [
+  //   './pages/**/*.{html,js}',
+  //   './components/**/*.{html,js}',
+  // ],
 };
