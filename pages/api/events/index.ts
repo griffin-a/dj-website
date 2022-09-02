@@ -1,5 +1,4 @@
 import EventController from "../../../controllers/EventController";
-
 const eventController = new EventController();
 
 export default async (req, res) => {

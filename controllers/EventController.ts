@@ -1,9 +1,7 @@
-import MongooseService from "../services/MongooseService";
-const mongooseService = new MongooseService();
+import EventRepository from "../services/data/EventRepository";
 
+const eventRepository = new EventRepository();
 export default class EventController {
-  constructor() {}
-
   async getAllEvents(req, res) {
     // await mongooseService.init();
     let { page = 1, limit = 2 } = req.query;
@@ -12,9 +10,9 @@ export default class EventController {
     limit = parseInt(limit);
 
     try {
-      const events = await mongooseService.EventDAL.getAllEvents(page, limit);
-      let count = await mongooseService.EventDAL.getDocumentCount();
-      count = parseInt(count);
+      const events = await eventRepository.getAllEvents(page, limit);
+      const count = await eventRepository.getDocumentCount();
+
       res.statusCode = 200;
       res.json({
         events,
@@ -31,8 +29,6 @@ export default class EventController {
   }
 
   async createEvent(req, res) {
-    await mongooseService.init();
-
     const {
       title,
       description,
@@ -51,7 +47,7 @@ export default class EventController {
     console.log(event);
 
     try {
-      const newEventId = await mongooseService.EventDAL.createEvent(event);
+      const newEventId = await eventRepository.createEvent(event);
       res.statusCode = 200;
       res.json({ newEventId });
     } catch (error) {
@@ -62,13 +58,10 @@ export default class EventController {
   }
 
   async getEventById(req, res) {
-    await mongooseService.init();
-    // console.log(.query);
-
     const { eventId } = req.query;
 
     try {
-      const event = await mongooseService.EventDAL.getEventById(eventId);
+      const event = await eventRepository.getEventById(eventId);
       res.statusCode = 200;
       res.json(event);
     } catch (error) {
