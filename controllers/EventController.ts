@@ -29,19 +29,19 @@ export default class EventController {
   }
 
   async createEvent(req, res) {
-    const {
-      title,
-      description,
-      paid,
-      hosts,
-      capacity,
-      venue,
-      date,
-      eventType,
-      photos,
-      completed,
-      currentlyBooked,
-    } = req.body.event;
+    // const {
+    //   title,
+    //   description,
+    //   paid,
+    //   hosts,
+    //   capacity,
+    //   venue,
+    //   date,
+    //   eventType,
+    //   photos,
+    //   completed,
+    //   currentlyBooked,
+    // } = req.body.event;
 
     const event = req.body.event;
     console.log(event);
