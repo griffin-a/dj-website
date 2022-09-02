@@ -1,4 +1,4 @@
-import Host from "../../models/Host";
+import { Host } from "@prisma/client";
 
 export default interface IHostRepository {
     getHosts(): Promise<Host[]>,

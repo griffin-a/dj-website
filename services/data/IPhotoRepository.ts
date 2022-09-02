@@ -1,4 +1,4 @@
-import Photo from "../../models/Photo";
+import { Photo } from "@prisma/client";
 
 export default interface IPhotoRepository {
     getPhotos(): Promise<Photo[]>,

@@ -1,4 +1,4 @@
-import Photo from "../../models/Photo";
+import { Photo } from "@prisma/client";
 import IPhotoRepository from "./IPhotoRepository";
 
 export default class PhotoRepository implements IPhotoRepository {

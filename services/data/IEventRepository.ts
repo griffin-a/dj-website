@@ -1,4 +1,4 @@
-import Event from "../../models/Event";
+import { Event } from "@prisma/client";
 
 export default interface IEventRepository {
     getAllEvents(): Promise<Event[]>,

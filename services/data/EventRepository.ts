@@ -1,4 +1,4 @@
-import Event from "../../models/Event";
+import { Event } from "@prisma/client";
 import IEventRepository from "./IEventRepository";
 
 export default class EventRepository implements IEventRepository {

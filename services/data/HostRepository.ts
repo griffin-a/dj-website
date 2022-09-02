@@ -1,4 +1,4 @@
-import Host from "../../models/Host";
+import { Host } from "@prisma/client";
 import IHostRepository from "./IHostRepository";
 
 export default class HostRepository implements IHostRepository {

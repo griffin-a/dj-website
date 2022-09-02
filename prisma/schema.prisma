@@ -37,6 +37,7 @@ model Host {
   HostsOnEvents HostsOnEvents[]
 }
 
+// Association table: many-to-many
 model HostsOnEvents {
   host    Host   @relation(fields: [hostId], references: [id])
   hostId  String
