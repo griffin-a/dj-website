@@ -1,6 +1,7 @@
 import EventCard from "../../components/EventCard";
 import { useState, useEffect } from "react";
 import useSWR from "swr";
+import { useSWRConfig } from "swr";
 import PaginationBoxes from "../../components/PaginationBoxes";
 import { eventsFetcher } from "../../utils/api";
 
@@ -19,6 +20,7 @@ type EventsProps = {
 export default function Events({ events = [], paginationData }: EventsProps) {
   const { totalPages, currentPage } = paginationData;
   const [page, setPage] = useState(currentPage);
+  const { cache } = useSWRConfig();
 
   // const { data, error } = useSWR(`/api/events?page=${page}`, fetcher, {
   //   initialData: page === 1 ? { events } : undefined,
@@ -28,6 +30,10 @@ export default function Events({ events = [], paginationData }: EventsProps) {
   useEffect(() => {
     console.log("Current page", page);
   }, [page]);
+
+  useEffect(() => {
+    cache.set("data", data.events);
+  }, [data]);
 
   return (
     <div>

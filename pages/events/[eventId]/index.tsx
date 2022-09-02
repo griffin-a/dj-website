@@ -1,33 +1,16 @@
 import CTASideImages from "../../../components/CTASideImages";
 import ReviewsGrid from "../../../components/ReviewsGrid";
-// import { useDispatch, useSelector } from "react-redux";
-import { useRouter } from "next/router";
-// import { setCurrentEvent } from "../../../store/eventsSlice";
+
 import { useEffect } from "react";
+import { useSWRConfig } from "swr";
 
 export default function EventId() {
-  // const { currentEvent } = useSelector((state) => state.events);
-  // const dispatch = useDispatch();
-  const router = useRouter();
-  const { isReady } = router;
-  const { eventId } = router.query;
+  const { cache } = useSWRConfig();
 
-  // useEffect(() => {
-  //   if (!currentEvent) {
-  //     if (!isReady) {
-  //       return;
-  //     }
-
-  //     const getEvent = async () => {
-  //       const res = await fetch(`http://localhost:3000/api/events/${eventId}`);
-  //       const event = await res.json();
-
-  //       dispatch(setCurrentEvent(event));
-  //     };
-
-  //     getEvent();
-  //   }
-  // }, [eventId]);
+  useEffect(() => {
+    console.log("Booted up");
+    console.log(cache.get("data"));
+  }, []);
 
   return (
     <div>
@@ -35,7 +18,7 @@ export default function EventId() {
         <div className="max-w-5xl pt-7 mx-auto">
           <h1 className="text-5xl text-center font-4 lh-6 ld-04 font-bold text-white mb-6">
             {/* {currentEvent.title} */}
-            {currentEvent && <>{currentEvent.title}</>}
+            {/* {currentEvent && <>{currentEvent.title}</>} */}
           </h1>
         </div>
       </section>
@@ -49,9 +32,3 @@ export default function EventId() {
   );
 }
 
-// export const getServerSideProps = wrapper.getServerSideProps(
-//   (store) => async () => {
-//     const res = await fetch("http://localhost:3000/api/events");
-//     const data = await res.json();
-//   }
-// );
