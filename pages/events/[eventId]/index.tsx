@@ -1,15 +1,33 @@
+import { useState, useEffect } from "react";
+import { useSWRConfig } from "swr";
+import { useRouter } from "next/router";
+
 import CTASideImages from "../../../components/CTASideImages";
 import ReviewsGrid from "../../../components/ReviewsGrid";
+import { Event } from "@prisma/client";
 
-import { useEffect } from "react";
-import { useSWRConfig } from "swr";
+type EventsData = {
+  events: Event[],
+  pagnation: number[]
+}
+
+const filterData = (data: EventsData, eventId): Event => data.events.filter(event => event.id === eventId)[0];
+
 
 export default function EventId() {
+  // TODO: handle case where the events data isn't cached yet; SWR call needs to be made
   const { cache } = useSWRConfig();
+  const router = useRouter();
+  
+  const [eventData, setEventData] = useState<Event | Event[]>();
 
   useEffect(() => {
-    console.log("Booted up");
-    console.log(cache.get("data"));
+    const eventId = router.query.eventId;
+    const eventsData = cache.get("data");
+
+    const event = filterData(eventsData, eventId);
+    console.log(event);
+    setEventData(event);
   }, []);
 
   return (
