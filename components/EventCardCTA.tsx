@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
 
 export default function EventCardCTA({
   eventId = undefined,

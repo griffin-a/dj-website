@@ -26,6 +26,7 @@ export default function Events({ events = [], paginationData }: EventsProps) {
   //   initialData:  page === 1 ? { events } : undefined,
   // });
   const { data, error } = useSWR(`/api/events?page=${page}`, fetcher);
+  
 
   useEffect(() => {
     console.log("Current page", page);
