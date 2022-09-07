@@ -59,9 +59,11 @@ export default class EventController {
 
   async getEventById(req, res) {
     const { eventId } = req.query;
+    // console.log(eventId);
 
     try {
       const event = await eventRepository.getEventById(eventId);
+      // console.log("EVENT", event);
       res.statusCode = 200;
       res.json(event);
     } catch (error) {

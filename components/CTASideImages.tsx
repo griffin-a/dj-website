@@ -1,4 +1,15 @@
-export default function CTASideImages() {
+type CTAProps = {
+  title?: string;
+  description?: string;
+};
+
+export default function CTASideImages({
+  title = "Lorem ipsum dolor sit, amet consectetur adipisicing.",
+  description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio\
+unde maiores natus placeat earum, atque necessitatibus sunt.\
+Ducimus inventore qui unde, corporis itaque rerum illum\
+tempore quod? Quae, quam quaerat.",
+}: CTAProps) {
   return (
     <div>
       <aside>
@@ -7,14 +18,11 @@ export default function CTASideImages() {
             <div className="p-8 text-center text-white bg-indigo-600 sm:col-span-2 sm:p-16 lg:py-24">
               <div className="max-w-lg mx-auto space-y-8">
                 <p className="text-3xl font-bold sm:text-4xl">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing.
+                  {title}
                 </p>
 
                 <p className="text-sm">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-                  unde maiores natus placeat earum, atque necessitatibus sunt.
-                  Ducimus inventore qui unde, corporis itaque rerum illum
-                  tempore quod? Quae, quam quaerat.
+                  {description}
                 </p>
 
                 <a

@@ -23,7 +23,7 @@ export default function Events({ events = [], paginationData }: EventsProps) {
   const { cache } = useSWRConfig();
 
   // const { data, error } = useSWR(`/api/events?page=${page}`, fetcher, {
-  //   initialData: page === 1 ? { events } : undefined,
+  //   initialData:  page === 1 ? { events } : undefined,
   // });
   const { data, error } = useSWR(`/api/events?page=${page}`, fetcher);
 
@@ -31,9 +31,9 @@ export default function Events({ events = [], paginationData }: EventsProps) {
     console.log("Current page", page);
   }, [page]);
 
-  useEffect(() => {
-    cache.set("data", data);
-  }, [data]);
+  // useEffect(() => {
+  //   cache.set("data", data);
+  // }, [data]);
 
   return (
     <div>
