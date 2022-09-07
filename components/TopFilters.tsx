@@ -89,7 +89,7 @@ export default function TopFilters() {
         <br />
       </div>
       <div>
-        <Badge />
+        {/* <Badge /> */}
       </div>
     </div>
   );

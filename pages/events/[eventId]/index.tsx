@@ -49,7 +49,7 @@ export default function EventId() {
         <div className="pb-10">
           {data && (
             <>
-              <CTASideImages title={data.title} description={data.description} />
+              <CTASideImages title={data.title} description={data.description} eventId={data.id}/>
               <ReviewsGrid />
             </>
           )}
