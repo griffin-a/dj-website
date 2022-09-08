@@ -14,7 +14,7 @@ datasource db {
 // Event - hosts: many to many
 // Event - videos: one to many 
 model Event {
-  id              String          @id @default(cuid())
+  id              Int             @id @default(autoincrement())
   title           String
   description     String
   paid            Boolean?
@@ -32,7 +32,7 @@ model Event {
 }
 
 model Host {
-  id            String          @id @default(cuid())
+  id            Int             @id @default(autoincrement())
   name          String?
   email         String?
   events        Event[]
@@ -41,29 +41,29 @@ model Host {
 
 // Association table: many-to-many
 model HostsOnEvents {
-  host    Host   @relation(fields: [hostId], references: [id])
-  hostId  String
-  event   Event  @relation(fields: [eventId], references: [id])
-  eventId String
+  host    Host  @relation(fields: [hostId], references: [id])
+  hostId  Int
+  event   Event @relation(fields: [eventId], references: [id])
+  eventId Int
 
   @@id([hostId, eventId])
 }
 
 model Photo {
-  id      String  @id @default(cuid())
+  id      Int     @id @default(autoincrement())
   title   String?
   link    String?
   event   Event?  @relation(fields: [eventId], references: [id])
-  eventId String?
+  eventId Int?
   tags    Tag[]
 }
 
 model Video {
-  id      String  @id @default(cuid())
+  id      Int     @id @default(autoincrement())
   title   String?
   link    String?
   event   Event?  @relation(fields: [eventId], references: [id])
-  eventId String?
+  eventId Int?
 }
 
 enum Tag {
