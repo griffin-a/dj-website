@@ -22,22 +22,18 @@ export default class PhotoController {
     const { eventId } = req.body;
 
     try {
-        // const { data, error } = await supabaseAdmin.storage.getBucket("test-bucket");
-      //   console.log(error);
-        // const { data, error } = await supabaseAdmin.storage
-        //   .from(eventId)
-        //   .list("test", {
-        //     limit: 100,
-        //     offset: 0,
-        //     sortBy: { column: "name", order: "asc" },
-        //   });
-
-      //   console.log("error", error);
-      const { data, error } = await storageClient.from(eventId).list();
-      console.log(data);
-      console.log(error);
+      // For use with pagination
+      const result = await storageClient.from(eventId).list("photos", {
+        limit: 10,
+        offset: 0,
+      });
+      const { publicURL, error } = await storageClient
+        .from("public-bucket")
+        .getPublicUrl("folder/avatar1.png");
+      console.log(result.data);
+      console.log(result.error);
       res.statusCode = 200;
-      res.json({ data });
+      res.json({ data: result.data });
     } catch (error) {
       console.log(error);
       throw error;
