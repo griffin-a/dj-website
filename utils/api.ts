@@ -1,4 +1,5 @@
 import { Event } from "@prisma/client";
+import PhotoDto from "../dtos/PhotoDto";
 
 export const eventsFetcher = async (page = 1) => {
   const res = await fetch(`http://localhost:3000/api/events?page=${page}`);
@@ -31,3 +32,10 @@ export const eventFetcher = async (eventId: string | number): Promise<Event> => 
 
   return data;
 };
+
+export const getPhotoDtos = async (eventId: string | number): Promise<PhotoDto[]> => {
+  const res = await fetch(`http://localhost:3000/api/events/${eventId}/photos`);
+  const data = await res.json();
+
+  return data;
+}
