@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import { Event } from "@prisma/client";
 import { eventFetcher } from "../../../../utils/api";
-import { supabaseAdmin } from "../../../../utils/supabase";
+import { storageClient, supabaseAdmin } from "../../../../utils/supabase";
 import { useEffect, useState } from "react";
 
 export default function EventIdPhotos() {
@@ -15,10 +15,9 @@ export default function EventIdPhotos() {
     // Only once the event data has been queried
     console.log(process.env.SUPABASE_URL, process.env.SUPABASE_KEY)
     async function getImages() {
-      const { data, error } = await supabaseAdmin
-        .storage
-        .from("sidedoor-bday")
-        .list();
+      // const { data, error } = await storageClient.getBucket("sidedoor-bday");
+      const { data, error } = await supabaseAdmin.storage.listBuckets()
+
 
       console.log(error);
       console.log("Image list", data);
