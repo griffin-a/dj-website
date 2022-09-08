@@ -26,10 +26,13 @@ export default class EventRepository implements IEventRepository {
   }
 
   async getEventById(eventId: string): Promise<Event> {
+    // Convert the eventId to an int
+    const eventIdInt: number = parseInt(eventId);
+
     try {
       const event = await prisma.event.findUnique({
         where: {
-          id: eventId,
+          id: eventIdInt,
         },
       });
 
