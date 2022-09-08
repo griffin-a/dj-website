@@ -4,7 +4,7 @@ import useSWR from "swr";
 import { Event } from "@prisma/client";
 import { eventFetcher } from "../../../../utils/api";
 import { supabaseAdmin } from "../../../../utils/supabase";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function EventIdPhotos() {
   const router = useRouter();
@@ -13,13 +13,15 @@ export default function EventIdPhotos() {
   useEffect(() => {
     // Fetch the list of media in the bucket querying by the event name
     // Only once the event data has been queried
+    console.log(process.env.SUPABASE_URL, process.env.SUPABASE_KEY)
     async function getImages() {
       const { data, error } = await supabaseAdmin
         .storage
         .from("sidedoor-bday")
         .list();
 
-      console.log(data);
+      console.log(error);
+      console.log("Image list", data);
     }
 
     getImages();
