@@ -29,17 +29,16 @@ const getPhotoDtos = async (rawData, eventId): Promise<PhotoDto[]> => {
   });
 
   Promise.all(
-    filenames.map((filename) => {
-      return storageClient.from(eventId).getPublicUrl(`photos/${filename}`);
+    filenames.map(async (filename) => {
+      const result = await storageClient
+        .from(eventId)
+        .getPublicUrl(`photos/${filename}`);
       // A list of urls is now generated
+
+      // Add to the dto
+      photoDtos.push({ id: v4(), url: result.data.publicURL });
     })
-  ).then((results) => {
-    results.map(result => {
-        // Add to the dto
-        photoDtos.push({ id: v4(), url: result.data.publicURL })
-    });
-    // console.log(photoDtos);
-  });
+  );
 
   return photoDtos;
 };
