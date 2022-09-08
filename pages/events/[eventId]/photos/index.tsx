@@ -1,34 +1,30 @@
 import PhotoPage from "../../../../components/PhotoPage";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 import useSWR from "swr";
 import { Event } from "@prisma/client";
 import { eventFetcher } from "../../../../utils/api";
+import { supabaseAdmin } from "../../../../utils/supabase";
+import { useEffect } from "react";
 
 export default function EventIdPhotos() {
-  // const { currentEvent } = useSelector((state) => state.events);
-  // const dispatch = useDispatch();
   const router = useRouter();
-  // const { isReady } = router;
-  // const { eventId } = router.query;
   const { data, error } = useSWR(`/${router.query.eventId}`, eventFetcher);
 
-  // useEffect(() => {
-  //   if (!currentEvent) {
-  //     if (!eventId) {
-  //       return;
-  //     }
+  useEffect(() => {
+    // Fetch the list of media in the bucket querying by the event name
+    // Only once the event data has been queried
+    async function getImages() {
+      const { data, error } = await supabaseAdmin
+        .storage
+        .from("sidedoor-bday")
+        .list();
 
-  //     const getEvent = async () => {
-  //       const res = await fetch(`http://localhost:3000/api/events/${eventId}`);
-  //       const event = await res.json();
+      console.log(data);
+    }
 
-  //       dispatch(setCurrentEvent(event));
-  //     };
+    getImages();
 
-  //     getEvent();
-  //   }
-  // }, [eventId]);
+  }, [data]);
 
   return (
     <div>
