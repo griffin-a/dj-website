@@ -11,6 +11,7 @@ export default class EventRepository implements IEventRepository {
       const events = await prisma.event.findMany({ skip, take: limit });
       return events;
     } catch (error) {
+      console.log(error);
       // Delegate error handling
       throw error;
     }
@@ -27,12 +28,12 @@ export default class EventRepository implements IEventRepository {
 
   async getEventById(eventId: string): Promise<Event> {
     // Convert the eventId to an int
-    const eventIdInt: number = parseInt(eventId);
+    // const eventIdInt: number = parseInt(eventId);
 
     try {
       const event = await prisma.event.findUnique({
         where: {
-          id: eventIdInt,
+          id: eventId,
         },
       });
 

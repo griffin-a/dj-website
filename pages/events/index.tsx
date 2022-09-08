@@ -19,7 +19,7 @@ type EventsProps = {
 
 export default function Events({ events = [], paginationData }: EventsProps) {
   const { totalPages, currentPage } = paginationData;
-  const [page, setPage] = useState(currentPage);
+  const [page, setPage] = useState(1);
   const { cache } = useSWRConfig();
 
   // const { data, error } = useSWR(`/api/events?page=${page}`, fetcher, {
