@@ -12,6 +12,7 @@ datasource db {
 
 // Event - photos: one to many 
 // Event - hosts: many to many
+// Event - videos: one to many 
 model Event {
   id              String          @id @default(cuid())
   title           String
@@ -26,6 +27,7 @@ model Event {
   imageUri        String?
   hosts           Host[]
   photos          Photo[]
+  videos          Video[]
   HostsOnEvents   HostsOnEvents[]
 }
 
@@ -53,4 +55,25 @@ model Photo {
   link    String?
   event   Event?  @relation(fields: [eventId], references: [id])
   eventId String?
+  tags    Tag[]
+}
+
+model Video {
+  id      String  @id @default(cuid())
+  title   String?
+  link    String?
+  event   Event?  @relation(fields: [eventId], references: [id])
+  eventId String?
+}
+
+enum Tag {
+  PARTY
+  FREE
+  PAID
+  PRIVATE
+  PUBLIC
+  OTHER
+  CLUB
+  BAR
+  HOUSE_PARTY
 }
