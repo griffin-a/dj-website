@@ -58,7 +58,8 @@ const getPhotoDtos = async (rawData, eventId): Promise<PhotoDto[]> => {
 
 export default class PhotoController {
   async getPhotos(req: NextApiRequest, res: NextApiResponse) {
-    const { eventId } = req.query;
+    const { eventId, page } = req.query;
+    console.log(page);
     console.log(req.query);
     console.log(eventId);
 

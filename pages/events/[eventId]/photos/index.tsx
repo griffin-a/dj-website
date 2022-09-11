@@ -32,7 +32,7 @@ export default function EventIdPhotos() {
         <div className="max-w-5xl pt-7 mx-auto">
           <h1 className="text-5xl text-center font-4 lh-6 ld-04 font-bold text-white mb-6">
             {data && (
-              <>Media for {data.title}</>
+              <>Photos for {data.title}</>
             )}
             {/* {currentEvent && <>{`Photos for ${currentEvent.title}`}</> } */}
           </h1>
