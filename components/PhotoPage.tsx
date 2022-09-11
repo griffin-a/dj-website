@@ -22,13 +22,13 @@ export default function PhotoPage({ photoData = null }) {
       {/* <SideFilters /> */}
       <TopFilters />
 
-      <div className="container lg:px-32 px-4 py-16 mx-auto items-center ">
-        <div className="grid grid-cols-6 grid-rows-4 grid-flow-col gap-2 relative">
+      <div className="container lg:px-32 px-4 py-16 mx-auto items-center">
+        <div className="grid sm:grid-cols-1 sm:grid-rows-12 md:grid-cols-2 md:grid-rows-6 lg:grid-cols-6 lg:grid-rows-4 md:lg:grid-flow-col gap-2 relative">
           {photoData && (
             <>
               {photoData.data.map((photo) => {
                 return (
-                  <div className="w-full col-span-2">
+                  <div className="w-full sm:col-span-1 md:col-span-1 lg:col-span-2">
                     <Image
                       key={photo.id}
                       width={400}
