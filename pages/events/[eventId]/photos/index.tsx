@@ -2,25 +2,24 @@ import PhotoPage from "../../../../components/PhotoPage";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import { Event } from "@prisma/client";
-import { eventFetcher } from "../../../../utils/api";
+import { eventFetcher, getPhotoDtos } from "../../../../utils/api";
 import { storageClient, supabaseAdmin } from "../../../../utils/supabase";
 import { useEffect, useState } from "react";
+import PhotoDto from "../../../../dtos/PhotoDto";
 
 export default function EventIdPhotos() {
   const router = useRouter();
+  const [photos, setPhotos] = useState<PhotoDto[]>();
   const { data, error } = useSWR(`/${router.query.eventId}`, eventFetcher);
 
   useEffect(() => {
     // Fetch the list of media in the bucket querying by the event name
     // Only once the event data has been queried
-    console.log(process.env.SUPABASE_URL, process.env.SUPABASE_KEY)
     async function getImages() {
       // const { data, error } = await storageClient.getBucket("sidedoor-bday");
-      const { data, error } = await supabaseAdmin.storage.listBuckets()
-
-
-      console.log(error);
-      console.log("Image list", data);
+      const res = await getPhotoDtos("sidedoor-bday");
+      console.log(res);
+      setPhotos(res);
     }
 
     getImages();
