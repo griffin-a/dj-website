@@ -4,14 +4,14 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { v4 } from "uuid";
 import PhotoDto from "../dtos/PhotoDto";
 
-// const NEXT_PUBLIC_SUPABASE_URL = "https://idjqfqmhnswnqadrheik.supabase.co";
-// const NEXT_PUBLIC_SUPABASE_KEY =
-//   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlkanFmcW1obnN3bnFhZHJoZWlrIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjExNTMyNTgsImV4cCI6MTk3NjcyOTI1OH0.f2sUJrKtgAbHt-RR9n5taGzEFZJ2QFUQQ2h4GwNRSDg";
-// const STORAGE_URL = "https://idjqfqmhnswnqadrheik.supabase.co/storage/v1";
+const NEXT_PUBLIC_SUPABASE_URL = "https://idjqfqmhnswnqadrheik.supabase.co";
+const NEXT_PUBLIC_SUPABASE_KEY =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlkanFmcW1obnN3bnFhZHJoZWlrIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjExNTMyNTgsImV4cCI6MTk3NjcyOTI1OH0.f2sUJrKtgAbHt-RR9n5taGzEFZJ2QFUQQ2h4GwNRSDg";
+const NEXT_PUBLIC_STORAGE_URL = "https://idjqfqmhnswnqadrheik.supabase.co/storage/v1";
 
-const NEXT_PUBLIC_SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const NEXT_PUBLIC_SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_KEY;
-const NEXT_PUBLIC_STORAGE_URL = process.env.NEXT_PUBLIC_STORAGE_URL;
+// const NEXT_PUBLIC_SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+// const NEXT_PUBLIC_SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_KEY;
+// const NEXT_PUBLIC_STORAGE_URL = process.env.NEXT_PUBLIC_STORAGE_URL;
 
 const supabaseAdmin = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,

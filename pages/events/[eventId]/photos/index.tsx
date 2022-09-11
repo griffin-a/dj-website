@@ -39,7 +39,7 @@ export default function EventIdPhotos() {
         </div>
         <section className="bg-gray-100">
           <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
-            <PhotoPage />
+            <PhotoPage photoData={photos}/>
           </div>
         </section>
       </section>
