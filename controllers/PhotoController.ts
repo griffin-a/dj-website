@@ -67,7 +67,7 @@ export default class PhotoController {
       const result = await storageClient
         .from(eventId as string)
         .list("photos", {
-          limit: 10,
+          limit: 12,
           offset: 0,
         });
 

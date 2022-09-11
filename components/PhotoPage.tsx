@@ -23,14 +23,14 @@ export default function PhotoPage({ photoData = null }) {
       <TopFilters />
 
       <div className="container lg:px-32 px-4 py-16 mx-auto items-center ">
-        <div className="grid grid-cols-4 grid-rows-4 grid-flow-col gap-2 relative">
+        <div className="grid grid-cols-6 grid-rows-4 grid-flow-col gap-2 relative">
           {photoData && (
             <>
               {photoData.data.map((photo) => {
                 return (
-                  <div className="w-full row-span-2">
+                  <div className="w-full col-span-2">
                     <Image
-                      id={photo.id}
+                      key={photo.id}
                       width={400}
                       height={400}
                       src={photo.url}
