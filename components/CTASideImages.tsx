@@ -47,7 +47,7 @@ tempore quod? Quae, quam quaerat.",
 
                 <br />
 
-                <Link href={`/events/${eventId}/photos`}>
+                <Link href={`/events/${eventId}/videos`}>
                   <a className="inline-flex items-center px-5 py-3 mt-8 font-medium text-indigo-600 bg-white rounded-lg hover:opacity-75">
                     Click to view videos
                     <svg
