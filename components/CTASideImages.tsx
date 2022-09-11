@@ -27,7 +27,29 @@ tempore quod? Quae, quam quaerat.",
 
                 <Link href={`/events/${eventId}/photos`}>
                   <a className="inline-flex items-center px-5 py-3 mt-8 font-medium text-indigo-600 bg-white rounded-lg hover:opacity-75">
-                    Click to view photos and videos
+                    Click to view photos
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="flex-shrink-0 w-4 h-4 ml-3"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      />
+                    </svg>
+                  </a>
+                </Link>
+
+                <br />
+
+                <Link href={`/events/${eventId}/photos`}>
+                  <a className="inline-flex items-center px-5 py-3 mt-8 font-medium text-indigo-600 bg-white rounded-lg hover:opacity-75">
+                    Click to view videos
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="flex-shrink-0 w-4 h-4 ml-3"
