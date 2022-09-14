@@ -1,4 +1,6 @@
+import GalleryCarouel from "../../../../components/GalleryCarousel";
 import PhotoPage from "../../../../components/PhotoPage";
+import Gallery from "../../../../components/Gallery";
 
 export default function Videos() {
   return (
@@ -12,6 +14,7 @@ export default function Videos() {
         <section className="bg-gray-100">
           <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
             {/* <PhotoPage photoData={photos}/> */}
+            <Gallery />
           </div>
         </section>
       </section>
