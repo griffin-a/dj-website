@@ -1,7 +1,6 @@
-import { Host, PrismaClient } from "@prisma/client";
+import { Host } from "@prisma/client";
 import IHostRepository from "./IHostRepository";
-
-const prisma = new PrismaClient();
+import { prisma } from "../../utils/prisma";
 
 export default class HostRepository implements IHostRepository {
     async getHosts(): Promise<Host[]> {

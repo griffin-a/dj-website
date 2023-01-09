@@ -1,8 +1,6 @@
 import { Event } from "@prisma/client";
-import { PrismaClient, Prisma } from "@prisma/client";
+import { prisma } from "../../utils/prisma";
 import IEventRepository from "./IEventRepository";
-
-const prisma = new PrismaClient();
 
 export default class EventRepository implements IEventRepository {
   async getAllEvents(page: number, limit: number): Promise<Event[]> {
