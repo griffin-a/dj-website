@@ -112,15 +112,15 @@ export default function Footer() {
               <li>
                 <a
                   className="hover:text-white transition-colors duration-200 text-xl"
-                  href="/"
+                  href="https://www.youtube.com/c/dahgman"
                 >
-                  Twitter
+                  YouTube
                 </a>
               </li>
               <li>
                 <a
                   className="hover:text-white transition-colors duration-200 text-xl"
-                  href="/"
+                  href="https://www.facebook.com/griffin.almquist.16/"
                 >
                   Facebook
                 </a>
@@ -128,9 +128,17 @@ export default function Footer() {
               <li>
                 <a
                   className="hover:text-white transition-colors duration-200 font-semibold text-xl"
-                  href="/"
+                  href="https://www.instagram.com/griff1in/"
                 >
                   Instagram
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-white transition-colors duration-200 font-semibold text-xl"
+                  href="https://soundcloud.com/boomkappa"
+                >
+                  Soundcloud
                 </a>
               </li>
             </ul>
@@ -184,7 +192,7 @@ export default function Footer() {
               href="/"
               className="text-md text-gray-200 hover:text-white transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold tracking-tight"
             >
-              © 2022 Company Inc.
+              © 2023 Griffin Almquist
             </a>
           </ul>
         </div>
