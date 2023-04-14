@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function InfoPanel({ title, imageUri="/images/profile.jpg", descriptions=[] }) {
+export default function InfoPanel({ title, imageUri="/images/DJ_Profile.jpg", descriptions=[] }) {
   return (
     <section>
       <div className="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">

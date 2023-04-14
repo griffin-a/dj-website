@@ -13,12 +13,17 @@ export default function EventIdPhotos() {
   const { data, error } = useSWR(`/${router.query.eventId}`, eventFetcher);
 
   useEffect(() => {
+    console.log("Running");
+    console.log("EVENT ID", router.query.eventId);
+  }, []);
+    
+  useEffect(() => {
     // Fetch the list of media in the bucket querying by the event name
     // Only once the event data has been queried
     async function getImages() {
       // const { data, error } = await storageClient.getBucket("sidedoor-bday");
+      // console.log("EVENT ID", router.query.eventId);
       const res = await getPhotoDtos("sidedoor-bday");
-      console.log(res);
       setPhotos(res);
     }
 

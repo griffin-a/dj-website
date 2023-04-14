@@ -18,11 +18,11 @@ const supabaseAdmin = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_KEY
 );
 
-console.log(
-  "ENV",
-  process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.NEXT_PUBLIC_SUPABASE_KEY
-);
+// console.log(
+//   "ENV",
+//   process.env.NEXT_PUBLIC_SUPABASE_URL,
+//   process.env.NEXT_PUBLIC_SUPABASE_KEY
+// );
 
 export const storageClient = new SupabaseStorageClient(
   NEXT_PUBLIC_STORAGE_URL,
@@ -43,7 +43,7 @@ const getPhotoDtos = async (rawData, eventId): Promise<PhotoDto[]> => {
 
   Promise.all(
     filenames.map(async (filename) => {
-      const result = await storageClient
+      const result = storageClient
         .from(eventId)
         .getPublicUrl(`photos/${filename}`);
       // A list of urls is now generated
@@ -59,9 +59,9 @@ const getPhotoDtos = async (rawData, eventId): Promise<PhotoDto[]> => {
 export default class PhotoController {
   async getPhotos(req: NextApiRequest, res: NextApiResponse) {
     const { eventId, page } = req.query;
-    console.log(page);
-    console.log(req.query);
-    console.log(eventId);
+    // console.log(page);
+    // console.log(req.query);
+    // console.log(eventId);
 
     try {
       // For use with pagination
