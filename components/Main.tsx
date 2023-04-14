@@ -35,7 +35,7 @@ export default function Main() {
         <Image
           className="object-cover object-center w-3/4 mb-10 border shadow-md g327"
           alt="DJ stock image"
-          src="/images/dj-1.jpg"
+          src="/images/decks-3.jpg"
           width="1000"
           height="500"
           // layout="fill"

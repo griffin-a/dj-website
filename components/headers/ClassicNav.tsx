@@ -36,6 +36,24 @@ function ClassicNav() {
             About
           </a>
         </Link>
+        <Link href="/mixes">
+          <a
+            className={`no-underline px-2 mr-3 font-medium hover:text-blue-400 ${
+              router.pathname == "/mixes" ? "text-white" : "text-gray-200"
+            }`}
+          >
+            Mixes
+          </a>
+        </Link>
+        <Link href="/photos">
+          <a
+            className={`no-underline px-2 mr-3 font-medium hover:text-blue-400 ${
+              router.pathname == "/photos" ? "text-white" : "text-gray-200"
+            }`}
+          >
+            Photos
+          </a>
+        </Link>
         <Link href="/services">
           <a
             className={`no-underline px-2 mr-3 font-medium hover:text-blue-400 ${
@@ -54,24 +72,6 @@ function ClassicNav() {
             }`}
           >
             Testimonials
-          </a>
-        </Link>
-        <Link href="/mixes">
-          <a
-            className={`no-underline px-2 mr-3 font-medium hover:text-blue-400 ${
-              router.pathname == "/mixes" ? "text-white" : "text-gray-200"
-            }`}
-          >
-            Mixes
-          </a>
-        </Link>
-        <Link href="/photos">
-          <a
-            className={`no-underline px-2 mr-3 font-medium hover:text-blue-400 ${
-              router.pathname == "/photos" ? "text-white" : "text-gray-200"
-            }`}
-          >
-            Photos
           </a>
         </Link>
       </div>
@@ -122,6 +122,24 @@ function ClassicNav() {
                 About
               </a>
             </Link>
+            <Link href="/mixes">
+              <a
+                className={`no-underline px-2 mr-3 font-medium hover:text-blue-400 ${
+                  router.pathname == "/mixes" ? "text-white" : "text-gray-200"
+                }`}
+              >
+                Mixes
+              </a>
+            </Link>
+            <Link href="/photos">
+              <a
+                className={`no-underline px-2 mr-3 font-medium hover:text-blue-400 ${
+                  router.pathname == "/photos" ? "text-white" : "text-gray-200"
+                }`}
+              >
+                Photos
+              </a>
+            </Link>
             <Link href="/services">
               <a
                 className={`no-underline px-2 mr-3 font-medium hover:text-blue-400 ${
@@ -144,25 +162,6 @@ function ClassicNav() {
                 Testimonials
               </a>
             </Link>
-            <Link href="/mixes">
-              <a
-                className={`no-underline px-2 mr-3 font-medium hover:text-blue-400 ${
-                  router.pathname == "/mixes" ? "text-white" : "text-gray-200"
-                }`}
-              >
-                Mixes
-              </a>
-            </Link>
-            <Link href="/photos">
-              <a
-                className={`no-underline px-2 mr-3 font-medium hover:text-blue-400 ${
-                  router.pathname == "/photos" ? "text-white" : "text-gray-200"
-                }`}
-              >
-                Photos
-              </a>
-            </Link>
-
             <div className="my-2 flex justify-center">
               <Link href="/events">
                 <Button text="Events" size="sm" type="secondary" />

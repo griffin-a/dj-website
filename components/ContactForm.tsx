@@ -41,7 +41,7 @@ export default function ContactForm() {
           <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
             <div className="lg:py-12 lg:col-span-2">
               <p className="max-w-xl text-lg">
-                Please don't hesitate to get in touch with us for any general
+                Please don't hesitate to get in touch with me for any general
                 inquiries or questions!
               </p>
 
