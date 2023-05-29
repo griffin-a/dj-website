@@ -1,7 +1,7 @@
 import { Photo } from "@prisma/client";
 import IPhotoRepository from "./IPhotoRepository";
 
-import { prisma } from "../../utils/prisma";
+// import { prisma } from "../../utils/prisma";
 
 export default class PhotoRepository implements IPhotoRepository {
     // async getPhotos(): Promise<Photo[]> {
